@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.larkea.openapi.autoconfigure.LarkAuthClientConfig,\
+com.larkea.openapi.autoconfigure.LarkClientConfig
