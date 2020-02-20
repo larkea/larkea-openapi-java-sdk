@@ -1,6 +1,9 @@
+
 subprojects {
   apply(plugin = "java")
   apply(from="${rootProject.projectDir}/gradle/quality.gradle.kts")
+  apply(from="${rootProject.projectDir}/gradle/publish.gradle.kts")
+
   configure<JavaPluginExtension> {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
@@ -29,4 +32,5 @@ subprojects {
     mavenCentral()
   }
 }
+
 

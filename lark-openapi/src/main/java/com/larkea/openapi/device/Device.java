@@ -1,6 +1,6 @@
 package com.larkea.openapi.device;
 
-import cn.huitek.delos.data.product.Product;
+import com.larkea.openapi.product.Product;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDateTime;
