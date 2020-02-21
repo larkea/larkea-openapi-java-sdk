@@ -12,6 +12,7 @@ import feign.Logger.Level;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.jackson.JacksonEncoder;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +39,7 @@ public class LarkClientConfig {
   // 所有的接口都添加 token Header
   private static class TokenInterceptor implements RequestInterceptor {
 
-    private String token;
+    private transient String token;
 
     public TokenInterceptor(String token) {
       this.token = token;

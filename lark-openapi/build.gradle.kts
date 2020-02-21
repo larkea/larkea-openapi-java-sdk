@@ -23,5 +23,8 @@ dependencies {
   // API Doc
   implementation("cn.huitek.pete:pete-core")
   implementation("cn.huitek.pete:pete-swagger")
+
+  // Test
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
