@@ -8,9 +8,8 @@ configure<PublishingExtension> {
     }
     repositories {
         maven {
-            // change URLs to point to your repos, e.g. http://my.org/repo
-            val releasesRepoUrl = uri("$buildDir/repos/releases")
-            val snapshotsRepoUrl = uri("$buildDir/repos/snapshots")
+            val releasesRepoUrl = uri(System.getProperty("REPOSITORY_URL_RELEASE", "$buildDir/repos/releases"))
+            val snapshotsRepoUrl = uri(System.getProperty("REPOSITORY_URL_SNAPSHOT", "$buildDir/repos/snapshots"))
             url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
         }
     }
