@@ -3,15 +3,25 @@ apply(plugin = "maven-publish")
 configure<PublishingExtension> {
 
     publications {
-        create<MavenPublication>("mavenJava") {
+        create<MavenPublication>("maven") {
             from(components["java"])
+            versionMapping {
+                usage("java-api") {
+                    fromResolutionOf("runtimeClasspath")
+                }
+                usage("java-runtime") {
+                    fromResolutionResult()
+                }
+            }
         }
     }
     repositories {
         maven {
-            val releasesRepoUrl = uri(System.getProperty("REPOSITORY_URL_RELEASE", "$buildDir/repos/releases"))
-            val snapshotsRepoUrl = uri(System.getProperty("REPOSITORY_URL_SNAPSHOT", "$buildDir/repos/snapshots"))
-            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
+
+            val releasesRepoUrl = uri(if (System.getenv("REPOSITORY_URL_RELEASE") == null) "$buildDir/repos/releases" else System.getenv("REPOSITORY_URL_RELEASE"))
+            val snapshotsRepoUrl = uri(if (System.getenv("REPOSITORY_URL_SNAPSHOT") == null) "$buildDir/repos/snapshots" else System.getenv("REPOSITORY_URL_SNAPSHOT"))
+            val version = project.property("version") as String
+            url = if (version.endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
         }
     }
 }

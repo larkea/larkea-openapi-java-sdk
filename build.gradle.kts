@@ -1,7 +1,3 @@
-
-group = "com.larkea"
-version = "1.0.0-SNAPSHOT"
-
 subprojects {
   apply(plugin = "java")
   apply(from="${rootProject.projectDir}/gradle/quality.gradle.kts")
@@ -21,10 +17,7 @@ subprojects {
     useJUnitPlatform()
   }
 
-//  ext {
-//    set("peteVersion", "1.0.23-SNAPSHOT")
-//    set("springBootVersion", "2.2.2.RELEASE")
-//  }
+  group = "com.larkea"
 
   repositories {
     mavenLocal()
