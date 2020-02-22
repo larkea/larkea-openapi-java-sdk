@@ -1,6 +1,7 @@
 apply(plugin = "maven-publish")
 
 configure<PublishingExtension> {
+
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])

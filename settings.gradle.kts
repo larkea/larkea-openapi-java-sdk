@@ -10,22 +10,15 @@
 rootProject.name = "Lark-Openapi"
 include("lark-openapi", "lark-openapi-starter")
 
-object Versions {
-  object Plugin {
-    const val dependencyManagementPluginVersion = "1.0.8.RELEASE"
-    const val springBootGradlePluginVersion = "2.2.2.RELEASE"
-  }
-}
-
 pluginManagement {
   resolutionStrategy {
     eachPlugin {
       if (requested.id.id == "org.springframework.boot") {
-        useVersion(Versions.Plugin.springBootGradlePluginVersion)
+        useVersion("2.2.2.RELEASE")
       }
 
       if (requested.id.id == "io.spring.dependency-management") {
-        useVersion(Versions.Plugin.dependencyManagementPluginVersion)
+        useVersion("1.0.8.RELEASE")
       }
     }
   }

@@ -1,4 +1,7 @@
 
+group = "com.larkea"
+version = "1.0.0-SNAPSHOT"
+
 subprojects {
   apply(plugin = "java")
   apply(from="${rootProject.projectDir}/gradle/quality.gradle.kts")
@@ -18,9 +21,6 @@ subprojects {
     useJUnitPlatform()
   }
 
-  group = "com.larkea"
-  version = "1.0.0-SNAPSHOT"
-
 //  ext {
 //    set("peteVersion", "1.0.23-SNAPSHOT")
 //    set("springBootVersion", "2.2.2.RELEASE")
@@ -28,7 +28,7 @@ subprojects {
 
   repositories {
     mavenLocal()
-    maven(url = "http://maven.huitong-tech.com/snapshots/")
+    maven(url = "https://maven.huitong-tech.com/snapshots/")
     mavenCentral()
   }
 }
