@@ -7,7 +7,6 @@ import feign.Response;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

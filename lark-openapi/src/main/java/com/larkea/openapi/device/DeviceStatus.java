@@ -11,6 +11,7 @@ public enum DeviceStatus {
   ;
 
   Integer value;
+
   String description;
 
   DeviceStatus(int value, String description) {

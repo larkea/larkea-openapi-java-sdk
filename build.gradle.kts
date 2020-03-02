@@ -17,8 +17,6 @@ subprojects {
     useJUnitPlatform()
   }
 
-  group = "com.larkea"
-
   repositories {
     mavenLocal()
     maven(url = "https://maven.huitong-tech.com/snapshots/")

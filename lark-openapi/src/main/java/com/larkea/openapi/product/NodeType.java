@@ -13,6 +13,7 @@ public enum NodeType {
   ;
 
   Integer value;
+
   String description;
 
   NodeType(int value, String description) {

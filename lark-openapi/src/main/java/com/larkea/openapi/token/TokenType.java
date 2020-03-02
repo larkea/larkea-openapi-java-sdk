@@ -7,6 +7,7 @@ public enum TokenType {
   Bearer(1, "Bearer"),
   Basic(2, "Basic"),
   ;
+
   Integer value;
 
   String description;

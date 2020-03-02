@@ -29,5 +29,4 @@ public class OAuthToken {
   @ApiModelProperty(value = "刷新令牌过期时间")
   private LocalDateTime gmtRefreshTokenExpired;
 
-
 }
