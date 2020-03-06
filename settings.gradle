@@ -1,0 +1,13 @@
+pluginManagement {
+  resolutionStrategy {
+    eachPlugin {
+      if (requested.id.id == "io.spring.dependency-management") {
+        useVersion "1.0.8.RELEASE"
+      }
+    }
+  }
+}
+
+rootProject.name = "Lark-Openapi"
+include("lark-openapi", "lark-openapi-starter")
+

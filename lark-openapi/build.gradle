@@ -3,8 +3,6 @@ plugins {
 }
 
 dependencyManagement {
-  val peteVersion = ext.get("peteVersion") as String
-  val springBootVersion = ext.get("springBootVersion") as String
   imports {
     mavenBom("cn.huitek.pete:pete-dependencies:$peteVersion")
     mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
