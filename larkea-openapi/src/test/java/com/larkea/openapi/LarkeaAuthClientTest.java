@@ -2,7 +2,7 @@ package com.larkea.openapi;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import cn.huitek.pete.core.util.JsonUtil;
+import com.huitongio.pete.core.util.JsonUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.token.OAuthToken;
 import feign.Feign;
@@ -10,7 +10,7 @@ import feign.Logger.Level;
 import feign.jackson.JacksonEncoder;
 import org.junit.jupiter.api.Test;
 
-class LarkAuthClientTest {
+class LarkeaAuthClientTest {
 
   @Test
   void getOAuthToken() {
@@ -19,13 +19,13 @@ class LarkAuthClientTest {
     String accessSecret = "p4X9okJWWX6XiIF99DAgyx4lvyK6GOlU";
 
     ObjectMapper mapper = JsonUtil.copy();
-    LarkAuthClient larkAuthClient =  Feign.builder().logger(new Slf4jLogger())
+    LarkeaAuthClient larkeaAuthClient =  Feign.builder().logger(new Slf4jLogger())
         .logLevel(Level.FULL)
         .encoder(new JacksonEncoder(mapper))
         .decoder(new JacksonDecoder(mapper))
-        .target(LarkAuthClient.class, url);
+        .target(LarkeaAuthClient.class, url);
 
-    OAuthToken oAuthToken = larkAuthClient.getOAuthToken(accessKey, accessSecret);
+    OAuthToken oAuthToken = larkeaAuthClient.getOAuthToken(accessKey, accessSecret);
     assertNotNull(oAuthToken);
   }
 }

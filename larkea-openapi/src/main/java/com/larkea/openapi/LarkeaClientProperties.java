@@ -4,9 +4,9 @@ import feign.Logger.Level;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "lark")
+@ConfigurationProperties(prefix = "larkea")
 @Data
-public class LarkClientProperties {
+public class LarkeaClientProperties {
 
   private String url;
 

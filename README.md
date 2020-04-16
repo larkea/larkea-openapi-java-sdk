@@ -1,3 +1,3 @@
-# Lark IoT Platform SDK for Java
+# Larkea IoT Platform SDK for Java
 
-Lark IoT Platform SDK for Java
+Larkea IoT Platform SDK for Java

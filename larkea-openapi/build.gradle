@@ -4,7 +4,7 @@ plugins {
 
 dependencyManagement {
   imports {
-    mavenBom("cn.huitek.pete:pete-dependencies:$peteVersion")
+    mavenBom("com.huitongio.pete:pete-dependencies:$peteVersion")
     mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
   }
 }
@@ -17,8 +17,12 @@ dependencies {
   implementation("io.github.openfeign:feign-jackson")
   implementation("io.github.openfeign:feign-slf4j")
   implementation("io.github.openfeign.form:feign-form")
-  implementation("org.springframework.boot:spring-boot-starter")
 
-  // Project
-  api(project(":lark-openapi"))
+  // API Doc
+  implementation("com.huitongio.pete:pete-core")
+  implementation("com.huitongio.pete:pete-swagger")
+
+  // Test
+  testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
+
