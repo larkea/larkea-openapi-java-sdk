@@ -22,7 +22,7 @@ configure(subprojects) {
   repositories {
     mavenLocal()
     maven {
-      url "https://maven.huitong-tech.com/snapshots/"
+      url "https://maven.huitong-inc.com/releases/"
     }
     mavenCentral()
   }

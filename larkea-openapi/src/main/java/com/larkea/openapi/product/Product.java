@@ -1,6 +1,6 @@
 package com.larkea.openapi.product;
 
-import cn.huitek.pete.core.data.BaseData;
+import com.huitongio.pete.core.data.BaseData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

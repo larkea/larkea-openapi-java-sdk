@@ -2,9 +2,9 @@ package com.larkea.openapi.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.JacksonDecoder;
-import com.larkea.openapi.LarkAuthClient;
-import com.larkea.openapi.LarkClient;
-import com.larkea.openapi.LarkClientProperties;
+import com.larkea.openapi.LarkeaAuthClient;
+import com.larkea.openapi.LarkeaClient;
+import com.larkea.openapi.LarkeaClientProperties;
 import com.larkea.openapi.Slf4jLogger;
 import com.larkea.openapi.token.OAuthToken;
 import feign.Feign;
@@ -12,7 +12,6 @@ import feign.Logger.Level;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.jackson.JacksonEncoder;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,18 +21,18 @@ import org.springframework.context.annotation.Configuration;
 public class LarkClientConfig {
 
   @Bean
-  LarkClient larkClient(LarkAuthClient larkAuthClient, LarkClientProperties larkClientProperties,
-      ObjectMapper mapper) {
-    OAuthToken oAuthToken = larkAuthClient
-        .getOAuthToken(larkClientProperties.getAccessKey(), larkClientProperties.getAccessSecret());
+  LarkeaClient larkClient(LarkeaAuthClient larkeaAuthClient, LarkeaClientProperties larkeaClientProperties,
+                          ObjectMapper mapper) {
+    OAuthToken oAuthToken = larkeaAuthClient
+        .getOAuthToken(larkeaClientProperties.getAccessKey(), larkeaClientProperties.getAccessSecret());
 
     return Feign.builder().logger(new Slf4jLogger())
         .logLevel(
-            larkClientProperties.getLevel() == null ? Level.NONE : larkClientProperties.getLevel())
+            larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
         .requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
         .encoder(new JacksonEncoder(mapper))
         .decoder(new JacksonDecoder(mapper))
-        .target(LarkClient.class, larkClientProperties.getUrl());
+        .target(LarkeaClient.class, larkeaClientProperties.getUrl());
   }
 
   // 所有的接口都添加 token Header

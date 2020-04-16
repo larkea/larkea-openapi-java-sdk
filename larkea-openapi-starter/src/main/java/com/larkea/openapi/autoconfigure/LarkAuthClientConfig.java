@@ -2,8 +2,8 @@ package com.larkea.openapi.autoconfigure;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.JacksonDecoder;
-import com.larkea.openapi.LarkAuthClient;
-import com.larkea.openapi.LarkClientProperties;
+import com.larkea.openapi.LarkeaAuthClient;
+import com.larkea.openapi.LarkeaClientProperties;
 import com.larkea.openapi.Slf4jLogger;
 import feign.Feign;
 import feign.Logger.Level;
@@ -16,17 +16,17 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 @EnableConfigurationProperties({
-    LarkClientProperties.class
+    LarkeaClientProperties.class
 })
 public class LarkAuthClientConfig {
 
   @Bean
-  LarkAuthClient larkAuthClient(LarkClientProperties larkClientProperties, ObjectMapper mapper) {
+  LarkeaAuthClient larkAuthClient(LarkeaClientProperties larkeaClientProperties, ObjectMapper mapper) {
     return Feign.builder().logger(new Slf4jLogger())
         .logLevel(
-            larkClientProperties.getLevel() == null ? Level.NONE : larkClientProperties.getLevel())
+            larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
         .encoder(new JacksonEncoder(mapper))
         .decoder(new JacksonDecoder(mapper))
-        .target(LarkAuthClient.class, larkClientProperties.getUrl());
+        .target(LarkeaAuthClient.class, larkeaClientProperties.getUrl());
   }
 }

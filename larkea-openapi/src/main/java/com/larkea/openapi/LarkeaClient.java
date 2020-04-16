@@ -1,11 +1,11 @@
 package com.larkea.openapi;
 
-import cn.huitek.pete.core.data.Page;
+import com.huitongio.pete.core.data.Page;
 import com.larkea.openapi.device.Device;
 import feign.Param;
 import feign.RequestLine;
 
-public interface LarkClient {
+public interface LarkeaClient {
 
   @RequestLine("GET /devices")
   Page<Device> listDevices();

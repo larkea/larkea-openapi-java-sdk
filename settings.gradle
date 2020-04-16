@@ -8,6 +8,6 @@ pluginManagement {
   }
 }
 
-rootProject.name = "Lark-Openapi"
-include("lark-openapi", "lark-openapi-starter")
+rootProject.name = "larkea-Openapi"
+include("larkea-openapi", "larkea-openapi-starter")
 
