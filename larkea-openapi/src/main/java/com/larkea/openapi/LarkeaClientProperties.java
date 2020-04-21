@@ -8,12 +8,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 public class LarkeaClientProperties {
 
-  private String url;
+	private String url;
 
-  private String accessKey;
+	private String accessKey;
 
-  private String accessSecret;
+	private String accessSecret;
 
-  private Level level;
+	private Level level;
 
 }

@@ -20,33 +20,33 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LarkClientConfig {
 
-  @Bean
-  LarkeaClient larkClient(LarkeaAuthClient larkeaAuthClient, LarkeaClientProperties larkeaClientProperties,
-                          ObjectMapper mapper) {
-    OAuthToken oAuthToken = larkeaAuthClient
-        .getOAuthToken(larkeaClientProperties.getAccessKey(), larkeaClientProperties.getAccessSecret());
+	@Bean
+	LarkeaClient larkClient(LarkeaAuthClient larkeaAuthClient, LarkeaClientProperties larkeaClientProperties,
+			ObjectMapper mapper) {
+		OAuthToken oAuthToken = larkeaAuthClient
+				.getOAuthToken(larkeaClientProperties.getAccessKey(), larkeaClientProperties.getAccessSecret());
 
-    return Feign.builder().logger(new Slf4jLogger())
-        .logLevel(
-            larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
-        .requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
-        .encoder(new JacksonEncoder(mapper))
-        .decoder(new JacksonDecoder(mapper))
-        .target(LarkeaClient.class, larkeaClientProperties.getUrl());
-  }
+		return Feign.builder().logger(new Slf4jLogger())
+				.logLevel(
+						larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
+				.requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
+				.encoder(new JacksonEncoder(mapper))
+				.decoder(new JacksonDecoder(mapper))
+				.target(LarkeaClient.class, larkeaClientProperties.getUrl());
+	}
 
-  // 所有的接口都添加 token Header
-  private static class TokenInterceptor implements RequestInterceptor {
+	// 所有的接口都添加 token Header
+	private static class TokenInterceptor implements RequestInterceptor {
 
-    private transient String token;
+		private transient String token;
 
-    public TokenInterceptor(String token) {
-      this.token = token;
-    }
+		public TokenInterceptor(String token) {
+			this.token = token;
+		}
 
-    @Override
-    public void apply(RequestTemplate template) {
-      template.header("Authorization", String.format("Bearer %s", this.token));
-    }
-  }
+		@Override
+		public void apply(RequestTemplate template) {
+			template.header("Authorization", String.format("Bearer %s", this.token));
+		}
+	}
 }

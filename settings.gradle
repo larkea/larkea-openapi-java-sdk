@@ -1,11 +1,11 @@
 pluginManagement {
-  resolutionStrategy {
-    eachPlugin {
-      if (requested.id.id == "io.spring.dependency-management") {
-        useVersion "1.0.8.RELEASE"
-      }
-    }
-  }
+	resolutionStrategy {
+		eachPlugin {
+			if (requested.id.id == "io.spring.dependency-management") {
+				useVersion "1.0.8.RELEASE"
+			}
+		}
+	}
 }
 
 rootProject.name = "larkea-Openapi"

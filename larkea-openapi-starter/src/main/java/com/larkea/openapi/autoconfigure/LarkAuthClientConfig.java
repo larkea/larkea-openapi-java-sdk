@@ -16,17 +16,17 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @Configuration
 @EnableConfigurationProperties({
-    LarkeaClientProperties.class
+		LarkeaClientProperties.class
 })
 public class LarkAuthClientConfig {
 
-  @Bean
-  LarkeaAuthClient larkAuthClient(LarkeaClientProperties larkeaClientProperties, ObjectMapper mapper) {
-    return Feign.builder().logger(new Slf4jLogger())
-        .logLevel(
-            larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
-        .encoder(new JacksonEncoder(mapper))
-        .decoder(new JacksonDecoder(mapper))
-        .target(LarkeaAuthClient.class, larkeaClientProperties.getUrl());
-  }
+	@Bean
+	LarkeaAuthClient larkAuthClient(LarkeaClientProperties larkeaClientProperties, ObjectMapper mapper) {
+		return Feign.builder().logger(new Slf4jLogger())
+				.logLevel(
+						larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
+				.encoder(new JacksonEncoder(mapper))
+				.decoder(new JacksonDecoder(mapper))
+				.target(LarkeaAuthClient.class, larkeaClientProperties.getUrl());
+	}
 }
