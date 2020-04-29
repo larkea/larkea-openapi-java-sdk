@@ -4,21 +4,17 @@ import com.huitongio.pete.core.data.EnumData;
 
 import lombok.Getter;
 
-/**
- * 产品节点类型
- */
 @Getter
-public enum NodeType implements EnumData {
-	DIRECT(1, "直连设备"),
-	NOT_DIRECT(2, "网关子设备"),
-	GATEWAY(3, "网关设备"),
+public enum PubsubFlag implements EnumData {
+	SYSTEM(1, "系统主题"),
+	CUSTOM(2, "自定义主题"),
 	;
 
 	Integer value;
 
 	String description;
 
-	NodeType(int value, String description) {
+	PubsubFlag(int value, String description) {
 		this.value = value;
 		this.description = description;
 	}
