@@ -4,21 +4,21 @@ import com.huitongio.pete.core.data.EnumData;
 
 import lombok.Getter;
 
+/**
+ * 用于表示设备注册的方式
+ */
 @Getter
-public enum DeviceStatus implements EnumData {
-	INACTIVE(1, "未激活"),
-	ONLINE(2, "在线"),
-	OFFLINE(3, "离线"),
-	DISABLED(4, "停用"),
+public enum RegisterType implements EnumData {
+	SYSTEM(1, "系统注册"),
+	DYNAMIC(2, "产品动态注册"),
 	;
 
 	Integer value;
 
 	String description;
 
-	DeviceStatus(int value, String description) {
+	RegisterType(Integer value, String description) {
 		this.value = value;
 		this.description = description;
 	}
-
 }
