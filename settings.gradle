@@ -1,13 +1,13 @@
 pluginManagement {
-  resolutionStrategy {
-    eachPlugin {
-      if (requested.id.id == "io.spring.dependency-management") {
-        useVersion "1.0.8.RELEASE"
-      }
-    }
-  }
+	resolutionStrategy {
+		eachPlugin {
+			if (requested.id.id == "io.spring.dependency-management") {
+				useVersion "1.0.8.RELEASE"
+			}
+		}
+	}
 }
 
-rootProject.name = "Lark-Openapi"
-include("lark-openapi", "lark-openapi-starter")
+rootProject.name = "larkea-openapi"
+include("larkea-openapi", "larkea-openapi-starter")
 

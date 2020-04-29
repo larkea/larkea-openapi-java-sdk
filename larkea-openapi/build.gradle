@@ -1,0 +1,28 @@
+plugins {
+	id("io.spring.dependency-management")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom("com.huitongio.pete:pete-dependencies:$peteVersion")
+		mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+	}
+}
+
+dependencies {
+	// Util
+	annotationProcessor("org.projectlombok:lombok")
+	implementation("org.projectlombok:lombok")
+	implementation("io.github.openfeign:feign-core")
+	implementation("io.github.openfeign:feign-jackson")
+	implementation("io.github.openfeign:feign-slf4j")
+	implementation("io.github.openfeign.form:feign-form")
+
+	// API Doc
+	implementation("com.huitongio.pete:pete-core")
+	implementation("com.huitongio.pete:pete-swagger")
+
+	// Test
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+

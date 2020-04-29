@@ -1,70 +1,100 @@
 jar {
-  afterEvaluate {
-    manifest {
-      attributes["Implementation-Title"] = project.name
-      attributes["Implementation-Version"] = project.version
-      attributes["Automatic-Module-Name"] = project.name.replace('-', '.')  // for Jigsaw
-      attributes["Created-By"] = "${System.getProperty("java.version")} (${System.getProperty("java.specification.vendor")})"
-    }
-  }
+	afterEvaluate {
+		manifest {
+			attributes['Implementation-Title'] = project.name
+			attributes['Implementation-Version'] = project.version
+			attributes['Automatic-Module-Name'] = project.name.replace('-', '.')
+			// for Jigsaw
+			attributes['Created-By'] = "${System.getProperty('java.version')} (${System.getProperty('java.specification.vendor')})"
+		}
+	}
 }
 
 task sourcesJar(type: Jar) {
-  archiveClassifier.set('sources')
-  from sourceSets.main.allSource
+	archiveClassifier.set('sources')
+	from sourceSets.main.allSource
 }
 
 javadoc {
-  options {
-    encoding "UTF-8"
-    charSet 'UTF-8'
-    author true
-    version true
-    failOnError false
-    links "http://docs.oracle.com/javase/8/docs/api"
-  }
+	options {
+		encoding 'UTF-8'
+		charSet 'UTF-8'
+		author true
+		version true
+		failOnError false
+		links 'http://docs.oracle.com/javase/8/docs/api'
+	}
 }
 
 task javadocJar(type: Jar) {
-  archiveClassifier.set('javadoc')
-  from 'build/docs/javadoc'
+	archiveClassifier.set('javadoc')
+	from 'build/docs/javadoc'
 }
 
 artifacts {
-  archives sourcesJar
-  archives javadocJar
+	archives sourcesJar
+	archives javadocJar
 }
 
 publishing {
-  repositories {
-    maven {
-      url = System.getenv('REPOSITORY_URL') ?: REPOSITORY_URL
-    }
-  }
-  publications {
-    mavenJava(MavenPublication) {
-      from components.java
+	repositories {
+		maven {
+			url = System.getenv('REPOSITORY_URL') ?: REPOSITORY_URL
+		}
+	}
+	publications {
+		mavenJava(MavenPublication) {
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
 
-      artifact sourcesJar
-      artifact javadocJar
+			from components.java
 
-      pom {
-        withXml {
-          def root = asNode()
-          root.dependencies.'*'.findAll {
-            def d = it
-            d.scope.text() == 'runtime' && project.configurations
-                .findByName("implementation").allDependencies.find { dep ->
-              dep.name == it.artifactId.text()
-            }.each() {
-              d.scope*.value = 'compile'
-              d.appendNode('optional', true)
-            }
-          }
-        }
-      }
-    }
-  }
+			artifact sourcesJar
+			artifact javadocJar
+
+			pom {
+				name = project.name
+				description = project.name
+				url = 'https://git.huitong-tech.com/nest/lark-openapi-java-sdk'
+				licenses {
+					license {
+						name = 'The Apache License, Version 2.0'
+						url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					}
+				}
+				developers {
+					developer {
+						name = 'Huitong Teams'
+						email = 'wangle@huitong-tech.com'
+					}
+				}
+				scm {
+					connection = 'scm:git@git.huitong-tech.com:nest/lark-openapi-java-sdk.git'
+					developerConnection = 'scm:git@git.huitong-tech.com:nest/lark-openapi-java-sdk.git'
+					url = 'https://git.huitong-tech.com/nest/lark-openapi-java-sdk'
+				}
+				withXml {
+					def root = asNode()
+					root.dependencies.'*'.findAll {
+						def d = it
+						d.scope.text() == 'runtime' && project.configurations
+								.findByName('implementation').allDependencies.find { dep ->
+							dep.name == it.artifactId.text()
+						}.each() {
+							d.scope*.value = 'compile'
+							d.appendNode('optional', true)
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 
