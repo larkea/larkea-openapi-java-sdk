@@ -8,6 +8,6 @@ pluginManagement {
 	}
 }
 
-rootProject.name = "larkea-Openapi"
+rootProject.name = "larkea-openapi"
 include("larkea-openapi", "larkea-openapi-starter")
 

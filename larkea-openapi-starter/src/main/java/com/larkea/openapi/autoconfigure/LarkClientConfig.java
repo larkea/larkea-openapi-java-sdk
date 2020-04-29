@@ -28,7 +28,7 @@ public class LarkClientConfig {
 
 		return Feign.builder().logger(new Slf4jLogger())
 				.logLevel(
-						larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
+						larkeaClientProperties.getHttpLogLevel() == null ? Level.NONE : larkeaClientProperties.getHttpLogLevel())
 				.requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
 				.encoder(new JacksonEncoder(mapper))
 				.decoder(new JacksonDecoder(mapper))

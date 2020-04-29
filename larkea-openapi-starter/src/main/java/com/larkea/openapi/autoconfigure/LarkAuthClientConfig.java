@@ -24,7 +24,7 @@ public class LarkAuthClientConfig {
 	LarkeaAuthClient larkAuthClient(LarkeaClientProperties larkeaClientProperties, ObjectMapper mapper) {
 		return Feign.builder().logger(new Slf4jLogger())
 				.logLevel(
-						larkeaClientProperties.getLevel() == null ? Level.NONE : larkeaClientProperties.getLevel())
+						larkeaClientProperties.getHttpLogLevel() == null ? Level.NONE : larkeaClientProperties.getHttpLogLevel())
 				.encoder(new JacksonEncoder(mapper))
 				.decoder(new JacksonDecoder(mapper))
 				.target(LarkeaAuthClient.class, larkeaClientProperties.getUrl());

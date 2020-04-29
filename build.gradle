@@ -6,6 +6,7 @@ configure(subprojects) {
 
 	group = "com.larkea"
 	version = rootProject.file('VERSION').text.trim()
+	description = "Larkea Java Openapi Sdk"
 
 	sourceCompatibility = JavaVersion.VERSION_1_8
 	targetCompatibility = JavaVersion.VERSION_1_8

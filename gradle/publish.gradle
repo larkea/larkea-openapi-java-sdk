@@ -1,11 +1,11 @@
 jar {
 	afterEvaluate {
 		manifest {
-			attributes["Implementation-Title"] = project.name
-			attributes["Implementation-Version"] = project.version
-			attributes["Automatic-Module-Name"] = project.name.replace('-', '.')
+			attributes['Implementation-Title'] = project.name
+			attributes['Implementation-Version'] = project.version
+			attributes['Automatic-Module-Name'] = project.name.replace('-', '.')
 			// for Jigsaw
-			attributes["Created-By"] = "${System.getProperty("java.version")} (${System.getProperty("java.specification.vendor")})"
+			attributes['Created-By'] = "${System.getProperty('java.version')} (${System.getProperty('java.specification.vendor')})"
 		}
 	}
 }
@@ -17,12 +17,12 @@ task sourcesJar(type: Jar) {
 
 javadoc {
 	options {
-		encoding "UTF-8"
+		encoding 'UTF-8'
 		charSet 'UTF-8'
 		author true
 		version true
 		failOnError false
-		links "http://docs.oracle.com/javase/8/docs/api"
+		links 'http://docs.oracle.com/javase/8/docs/api'
 	}
 }
 
@@ -44,18 +44,47 @@ publishing {
 	}
 	publications {
 		mavenJava(MavenPublication) {
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
+
 			from components.java
 
 			artifact sourcesJar
 			artifact javadocJar
 
 			pom {
+				name = project.name
+				description = project.name
+				url = 'https://git.huitong-tech.com/nest/lark-openapi-java-sdk'
+				licenses {
+					license {
+						name = 'The Apache License, Version 2.0'
+						url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					}
+				}
+				developers {
+					developer {
+						name = 'Huitong Teams'
+						email = 'wangle@huitong-tech.com'
+					}
+				}
+				scm {
+					connection = 'scm:git@git.huitong-tech.com:nest/lark-openapi-java-sdk.git'
+					developerConnection = 'scm:git@git.huitong-tech.com:nest/lark-openapi-java-sdk.git'
+					url = 'https://git.huitong-tech.com/nest/lark-openapi-java-sdk'
+				}
 				withXml {
 					def root = asNode()
 					root.dependencies.'*'.findAll {
 						def d = it
 						d.scope.text() == 'runtime' && project.configurations
-								.findByName("implementation").allDependencies.find { dep ->
+								.findByName('implementation').allDependencies.find { dep ->
 							dep.name == it.artifactId.text()
 						}.each() {
 							d.scope*.value = 'compile'

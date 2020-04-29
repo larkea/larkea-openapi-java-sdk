@@ -14,6 +14,6 @@ public class LarkeaClientProperties {
 
 	private String accessSecret;
 
-	private Level level;
+	private Level httpLogLevel;
 
 }
