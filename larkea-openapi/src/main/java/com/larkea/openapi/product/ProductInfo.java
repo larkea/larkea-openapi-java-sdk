@@ -2,11 +2,12 @@ package com.larkea.openapi.product;
 
 import java.time.LocalDateTime;
 
-import com.huitongio.pete.core.data.BaseData;
+import com.huitongio.pete.core.model.BaseModel;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
@@ -18,48 +19,53 @@ import lombok.experimental.Accessors;
  * @since 2020-01-01
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@ApiModel(value = "Product", description = "产品")
-public class Product implements BaseData {
+@ApiModel(value = "产品", description = "产品")
+public class ProductInfo extends BaseModel<Product> {
 
 	private static final long serialVersionUID = 1L;
 
-	@ApiModelProperty(value = "产品主键")
+	@ApiModelProperty("产品主键")
 	private Long id;
 
 	@ApiModelProperty(value = "租户主键")
 	private Long tenantId;
 
-	@ApiModelProperty(value = "产品标识")
+	@ApiModelProperty("产品标识")
 	private String productKey;
 
-	@ApiModelProperty(value = "产品名称")
+	@ApiModelProperty("产品密钥")
+	private String productSecret;
+
+	@ApiModelProperty("产品名称")
 	private String name;
 
-	@ApiModelProperty(value = "产品描述")
+	@ApiModelProperty("产品描述")
 	private String description;
 
-	@ApiModelProperty(value = "产品状态")
+	@ApiModelProperty("产品状态")
 	private ProductStatus status;
 
-	@ApiModelProperty(value = "是否通过设备密钥动态注册")
+	@ApiModelProperty("是否通过设备密钥动态注册")
 	private Boolean dynamicRegister;
 
-	@ApiModelProperty(value = "节点类型")
+	@ApiModelProperty("节点类型")
 	private NodeType nodeType;
 
-	@ApiModelProperty(value = "认证类型")
+	@ApiModelProperty("认证类型")
 	private AuthType authType;
 
-	@ApiModelProperty(value = "连网方式")
+	@ApiModelProperty("连网方式")
 	private NetType netType;
 
-	@ApiModelProperty(value = "连接网关方式")
+	@ApiModelProperty("连接网关方式")
 	private GwNetType gwNetType;
 
-	@ApiModelProperty(value = "数据格式")
+	@ApiModelProperty("数据格式")
 	private DataFormat dataFormat;
 
-	@ApiModelProperty(value = "创建时间")
+	@ApiModelProperty("创建时间")
 	private LocalDateTime gmtCreated;
+
 }

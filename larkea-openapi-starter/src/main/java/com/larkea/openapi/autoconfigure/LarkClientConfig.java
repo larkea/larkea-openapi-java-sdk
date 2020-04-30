@@ -5,6 +5,7 @@ import com.larkea.openapi.JacksonDecoder;
 import com.larkea.openapi.LarkeaAuthClient;
 import com.larkea.openapi.LarkeaClient;
 import com.larkea.openapi.LarkeaClientProperties;
+import com.larkea.openapi.LarkeaQueryMapEncoder;
 import com.larkea.openapi.Slf4jLogger;
 import com.larkea.openapi.token.OAuthToken;
 import feign.Feign;
@@ -27,6 +28,7 @@ public class LarkClientConfig {
 				.getOAuthToken(larkeaClientProperties.getAccessKey(), larkeaClientProperties.getAccessSecret());
 
 		return Feign.builder().logger(new Slf4jLogger())
+				.queryMapEncoder(new LarkeaQueryMapEncoder())
 				.logLevel(
 						larkeaClientProperties.getHttpLogLevel() == null ? Level.NONE : larkeaClientProperties.getHttpLogLevel())
 				.requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
