@@ -27,7 +27,7 @@ public class JacksonDecoder extends feign.jackson.JacksonDecoder {
 		JavaType typeWrapped = mapper.getTypeFactory().constructParametricType(
 				Result.class, mapper.constructType(type));
 		Result<?> result = (Result<?>) super.decode(response, typeWrapped);
-		LOGGER.debug("Call Larkea api finish:{}", result);
+		LOGGER.debug("Call larkea api finished:{}", result);
 		return result.getData();
 	}
 }
