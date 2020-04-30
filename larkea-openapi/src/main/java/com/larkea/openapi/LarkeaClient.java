@@ -1,9 +1,12 @@
 package com.larkea.openapi;
 
+import java.util.List;
+
 import com.huitongio.pete.core.data.Page;
 
 import com.larkea.openapi.device.Device;
 import com.larkea.openapi.thing.DeviceProperty;
+import com.larkea.openapi.thing.OperationInfo;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.ts.TsPropertyData;
 import com.larkea.openapi.ts.TsPropertyPageQueryParam;
@@ -31,5 +34,8 @@ public interface LarkeaClient {
 
 	@RequestLine("GET /devices/properties?productKey={pk}&deviceKey={dk}")
 	DeviceProperty getDevicePropertyValue(@Param("pk") String pk, @Param("dk") String dk);
+
+	@RequestLine("GET /products/{productId}/operations")
+	List<OperationInfo> listProductOperations(@Param("productId") Long productId);
 
 }
