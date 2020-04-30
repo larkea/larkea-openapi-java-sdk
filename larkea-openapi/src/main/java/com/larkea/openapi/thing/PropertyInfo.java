@@ -1,5 +1,7 @@
 package com.larkea.openapi.thing;
 
+import java.util.Map;
+
 import javax.validation.constraints.NotNull;
 
 import io.swagger.annotations.ApiModelProperty;
@@ -39,5 +41,5 @@ public class PropertyInfo {
 	private String description;
 
 	@NotNull
-	private Spec spec;
+	private Map<String, Object> spec;
 }

@@ -1,5 +1,7 @@
 package com.larkea.openapi.thing;
 
+import java.util.Map;
+
 import com.huitongio.pete.core.model.BaseModel;
 
 import io.swagger.annotations.ApiModel;
@@ -46,6 +48,6 @@ public class DataSpecInfo extends BaseModel<DataSpec> {
 	private ParamDirection paramDirection;
 
 	@ApiModelProperty(value = "数据规范")
-	private Spec spec;
+	private Map<String, Object> spec;
 
 }
