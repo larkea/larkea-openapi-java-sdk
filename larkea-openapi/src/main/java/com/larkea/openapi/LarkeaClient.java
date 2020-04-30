@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.huitongio.pete.core.data.Page;
 
-import com.larkea.openapi.device.Device;
+import com.larkea.openapi.device.DeviceInfo;
+import com.larkea.openapi.device.DeviceStatusInfo;
 import com.larkea.openapi.thing.DeviceProperty;
 import com.larkea.openapi.thing.OperationInfo;
 import com.larkea.openapi.thing.ThingModel;
@@ -17,13 +18,13 @@ import feign.RequestLine;
 public interface LarkeaClient {
 
 	@RequestLine("GET /devices")
-	Page<Device> listDevices();
+	Page<DeviceInfo> listDevices();
 
 	@RequestLine("GET /devices/{deviceId}")
-	Device getDeviceById(@Param("deviceId") Long deviceId);
+	DeviceInfo getDeviceById(@Param("deviceId") Long deviceId);
 
 	@RequestLine("GET /devices/{deviceId}/status")
-	Device getDeviceStatusById(@Param("deviceId") Long deviceId);
+	DeviceStatusInfo getDeviceStatusById(@Param("deviceId") Long deviceId);
 
 	@RequestLine("GET /things/model?productKey={pk}")
 	ThingModel getThingModelByProductKey(@Param("pk") String pk);
