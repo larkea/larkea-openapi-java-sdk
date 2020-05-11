@@ -2,11 +2,14 @@ package com.larkea.openapi;
 
 import com.huitongio.pete.core.data.Page;
 import com.huitongio.pete.core.util.JsonUtil;
+import com.huitongio.pete.core.util.StringUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.thing.DeviceProperty;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.token.OAuthToken;
+import com.larkea.openapi.ts.TsDevicePropertyData;
+import com.larkea.openapi.ts.TsPropertiesPageQueryParam;
 import com.larkea.openapi.ts.TsPropertyData;
 import com.larkea.openapi.ts.TsPropertyPageQueryParam;
 import feign.Feign;
@@ -14,6 +17,7 @@ import feign.Logger.Level;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.jackson.JacksonEncoder;
+import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -21,13 +25,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class LarkeaClientTest {
+public class LarkeaClientTest {
 
 	private static LarkeaAuthClient larkeaAuthClient;
 
 	private static LarkeaClient larkeaClient;
 
-	private static final String url = "http://lark.test.pivaiot.com/api";
+	//private static final String url = "http://lark.test.pivaiot.com/api";
+	private static final String url = "http://127.0.0.1:9020";
 
 	private static final String accessKey = "111111111111111111111";
 
@@ -84,12 +89,22 @@ class LarkeaClientTest {
 	}
 
 	@Test
+	void listTsPropertiesDateTest() {
+		TsPropertiesPageQueryParam param = new TsPropertiesPageQueryParam();
+		param.setPropertyIdList(StringUtil.join(Lists.newArrayList(47L, 50L), ','));
+		Page<TsDevicePropertyData> dataPage = larkeaClient.listTsDevicePropertyData(param);
+		System.out.println(dataPage);
+		assertFalse(dataPage.getRows().isEmpty());
+	}
+
+	@Test
 	void getDevicePropertyValueTest() {
 		String pk = "2fAhyOX3BxtHMY7lFF1SHS";
 		String dk = "7PyUnXXL199w1EQL78K1pB";
 		DeviceProperty deviceProperty = larkeaClient.getDevicePropertyValue(pk, dk);
 
 		System.out.println(deviceProperty);
+		assertNotNull(deviceProperty);
 	}
 
 	// 所有的接口都添加 token Header
