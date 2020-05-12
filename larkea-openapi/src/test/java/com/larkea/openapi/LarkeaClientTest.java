@@ -2,6 +2,7 @@ package com.larkea.openapi;
 
 import com.huitongio.pete.core.data.Page;
 import com.huitongio.pete.core.util.JsonUtil;
+import com.huitongio.pete.core.util.StringPool;
 import com.huitongio.pete.core.util.StringUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,6 +10,7 @@ import com.larkea.openapi.thing.DeviceProperty;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.token.OAuthToken;
 import com.larkea.openapi.ts.TsDevicePropertyData;
+import com.larkea.openapi.ts.TsDevicesPageQueryParam;
 import com.larkea.openapi.ts.TsPropertiesPageQueryParam;
 import com.larkea.openapi.ts.TsPropertyData;
 import com.larkea.openapi.ts.TsPropertyPageQueryParam;
@@ -92,7 +94,13 @@ public class LarkeaClientTest {
 	void listTsPropertiesDateTest() {
 		TsPropertiesPageQueryParam param = new TsPropertiesPageQueryParam();
 		param.setPropertyIdList(StringUtil.join(Lists.newArrayList(47L, 50L), ','));
-		Page<TsDevicePropertyData> dataPage = larkeaClient.listTsDevicePropertyData(param);
+		Page<TsDevicePropertyData> dataPage = larkeaClient.listTsPropertiesData(param);
+		System.out.println(dataPage);
+		assertFalse(dataPage.getRows().isEmpty());
+
+		TsDevicesPageQueryParam p = new TsDevicesPageQueryParam();
+		p.setDeviceIdList(StringUtil.join(Lists.newArrayList(23L, 24L, StringPool.COMMA)));
+		dataPage = larkeaClient.listTsDevicesData(p);
 		System.out.println(dataPage);
 		assertFalse(dataPage.getRows().isEmpty());
 	}
