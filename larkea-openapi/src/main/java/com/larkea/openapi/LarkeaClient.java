@@ -10,6 +10,7 @@ import com.larkea.openapi.thing.DeviceProperty;
 import com.larkea.openapi.thing.OperationInfo;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.ts.TsDevicePropertyData;
+import com.larkea.openapi.ts.TsDevicesPageQueryParam;
 import com.larkea.openapi.ts.TsPropertiesPageQueryParam;
 import com.larkea.openapi.ts.TsPropertyData;
 import com.larkea.openapi.ts.TsPropertyPageQueryParam;
@@ -36,7 +37,10 @@ public interface LarkeaClient {
 			@QueryMap TsPropertyPageQueryParam param);
 
 	@RequestLine("GET /properties/data")
-	Page<TsDevicePropertyData> listTsDevicePropertyData(@QueryMap TsPropertiesPageQueryParam param);
+	Page<TsDevicePropertyData> listTsPropertiesData(@QueryMap TsPropertiesPageQueryParam param);
+
+	@RequestLine("GET /properties/data/devices")
+	Page<TsDevicePropertyData> listTsDevicesData(@QueryMap TsDevicesPageQueryParam param);
 
 	@RequestLine("GET /properties?productKey={pk}&deviceKey={dk}")
 	DeviceProperty getDevicePropertyValue(@Param("pk") String pk, @Param("dk") String dk);
