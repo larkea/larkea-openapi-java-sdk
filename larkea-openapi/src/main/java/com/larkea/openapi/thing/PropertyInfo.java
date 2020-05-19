@@ -20,12 +20,12 @@ public class PropertyInfo {
 
 	@NotNull
 	@Length(min = 1, max = 30)
-	@ApiModelProperty(value = "产品名称")
+	@ApiModelProperty(value = "属性名称")
 	private String name;
 
 	@NotNull
 	@Length(min = 1, max = 50)
-	@ApiModelProperty(value = "产品标识")
+	@ApiModelProperty(value = "属性标识")
 	private String identifier;
 
 	@NotNull
@@ -36,8 +36,10 @@ public class PropertyInfo {
 	@ApiModelProperty(value = "数据类型")
 	private DataType dataType;
 
+	@ApiModelProperty(value = "属性说明")
 	private String description;
 
 	@NotNull
+	@ApiModelProperty(value = "属性定义规范")
 	private Spec spec;
 }

@@ -25,8 +25,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "DeviceInfo", description = "设备")
 public class DeviceInfo extends BaseModel<Device> {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "设备主键")
 	private Long id;
 

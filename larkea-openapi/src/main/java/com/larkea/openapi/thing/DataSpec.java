@@ -20,8 +20,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "DataSpec", description = "数据规范")
 public class DataSpec implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "数据规范主键")
 	private Long id;
 

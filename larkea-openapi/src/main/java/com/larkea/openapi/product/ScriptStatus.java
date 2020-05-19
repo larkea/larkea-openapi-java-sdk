@@ -5,16 +5,16 @@ import com.huitongio.pete.core.data.EnumData;
 import lombok.Getter;
 
 @Getter
-public enum TopicType implements EnumData {
-	SYSTEM(1, "系统主题"),
-	USER(2, "用户主题"),
+public enum ScriptStatus implements EnumData {
+	DRAFT(1, "草稿"),
+	PUBLISHED(2, "已发布"),
 	;
 
 	Integer value;
 
 	String description;
 
-	TopicType(int value, String description) {
+	ScriptStatus(Integer value, String description) {
 		this.value = value;
 		this.description = description;
 	}

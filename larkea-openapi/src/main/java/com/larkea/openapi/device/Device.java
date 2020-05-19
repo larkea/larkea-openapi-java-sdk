@@ -22,8 +22,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Device", description = "设备")
 public class Device implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "设备主键")
 	private Long id;
 

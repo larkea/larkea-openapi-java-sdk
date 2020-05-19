@@ -5,12 +5,11 @@ import java.util.List;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-
 @Data
 @Accessors(chain = true)
 public class ThingModel {
 
-	private ThingProfile profile;
+	private String productKey;
 
 	private List<PropertyInfo> properties;
 

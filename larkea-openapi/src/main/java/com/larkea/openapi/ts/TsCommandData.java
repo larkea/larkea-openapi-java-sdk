@@ -1,28 +1,27 @@
 package com.larkea.openapi.ts;
 
-import com.huitongio.pete.core.model.BaseModel;
+import com.huitongio.pete.core.data.BaseData;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 事件时序数据
+ * 命令时序数据
  * </p>
  *
  * @author wangle
  * @since 2020-01-12
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@ApiModel(value = "TsEvent参数", description = "事件时序数据")
-public class TsEventParam extends BaseModel<TsEvent> {
+@ApiModel(value = "TsCommandData", description = "命令时序数据")
+public class TsCommandData implements BaseData {
 
-	private static final long serialVersionUID = 1L;
+	@ApiModelProperty(value = "时序属性值主键")
+	private Long id;
 
 	@ApiModelProperty(value = "租户主键")
 	private Long tenantId;
@@ -36,11 +35,14 @@ public class TsEventParam extends BaseModel<TsEvent> {
 	@ApiModelProperty(value = "产品功能主键")
 	private Long operationId;
 
-	@ApiModelProperty(value = "事件时间戳")
-	private Long ts;
+	@ApiModelProperty(value = "命令发送时间戳")
+	private Long tsSent;
 
-	@ApiModelProperty(value = "事件类型")
-	private Integer eventType;
+	@ApiModelProperty(value = "命令完成时间戳")
+	private Long tsReceived;
+
+	@ApiModelProperty(value = "输入参数")
+	private String inputV;
 
 	@ApiModelProperty(value = "输出参数")
 	private String outputV;

@@ -20,8 +20,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "DeviceCredential", description = "设备密钥")
 public class DeviceCredential implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "设备密钥主键")
 	private Long id;
 

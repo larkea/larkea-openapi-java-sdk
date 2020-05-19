@@ -1,5 +1,7 @@
 package com.larkea.openapi.thing;
 
+import java.util.Map;
+
 import com.huitongio.pete.core.model.BaseModel;
 
 import io.swagger.annotations.ApiModel;
@@ -21,8 +23,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @ApiModel(value = "DataSpecInfo", description = "数据规范")
 public class DataSpecInfo extends BaseModel<DataSpec> {
-
-	private static final long serialVersionUID = 1L;
 
 	@ApiModelProperty(value = "数据规范主键")
 	private Long id;
@@ -46,6 +46,6 @@ public class DataSpecInfo extends BaseModel<DataSpec> {
 	private ParamDirection paramDirection;
 
 	@ApiModelProperty(value = "数据规范")
-	private Spec spec;
+	private Map<String, Object> spec;
 
 }

@@ -1,4 +1,4 @@
-package com.larkea.openapi.ts;
+package com.larkea.openapi.device;
 
 import com.huitongio.pete.core.data.BaseData;
 
@@ -9,7 +9,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 事件时序数据
+ * 设备活动日志
  * </p>
  *
  * @author wangle
@@ -17,12 +17,10 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-@ApiModel(value = "TsEvent", description = "事件时序数据")
-public class TsEvent implements BaseData {
+@ApiModel(value = "DeviceActivityLog", description = "设备活动日志")
+public class DeviceActivity implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
-	@ApiModelProperty(value = "时序属性值主键")
+	@ApiModelProperty(value = "消息日志主键")
 	private Long id;
 
 	@ApiModelProperty(value = "租户主键")
@@ -34,16 +32,10 @@ public class TsEvent implements BaseData {
 	@ApiModelProperty(value = "设备主键")
 	private Long deviceId;
 
-	@ApiModelProperty(value = "产品功能主键")
-	private Long operationId;
-
-	@ApiModelProperty(value = "事件时间戳")
+	@ApiModelProperty(value = "日志时间戳")
 	private Long ts;
 
-	@ApiModelProperty(value = "事件类型")
-	private Integer eventType;
-
-	@ApiModelProperty(value = "输出参数")
-	private String outputV;
+	@ApiModelProperty(value = "设备状态")
+	private Integer status;
 
 }

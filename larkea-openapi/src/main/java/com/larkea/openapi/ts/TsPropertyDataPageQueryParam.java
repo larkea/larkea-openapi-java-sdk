@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TsPropertyPageQueryParam extends PageQueryParam {
+public class TsPropertyDataPageQueryParam extends PageQueryParam {
 
 	@ApiModelProperty("开始时间戳，毫秒")
 	Long tsBegin;
