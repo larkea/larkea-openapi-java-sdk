@@ -2,6 +2,8 @@ package com.larkea.openapi.product;
 
 import com.huitongio.pete.core.data.BaseData;
 
+import com.larkea.openapi.thing.PubsubFlag;
+import com.larkea.openapi.thing.TopicType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,8 +22,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "ProductTopic", description = "产品主题")
 public class ProductTopic implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "产品主题主键")
 	private Long id;
 
@@ -32,7 +32,7 @@ public class ProductTopic implements BaseData {
 	private Long productId;
 
 	@ApiModelProperty(value = "主题")
-	private String topic;
+	private String topicName;
 
 	@ApiModelProperty(value = "主题类型")
 	private TopicType topicType;

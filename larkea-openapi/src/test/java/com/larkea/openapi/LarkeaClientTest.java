@@ -1,19 +1,20 @@
 package com.larkea.openapi;
 
+import java.util.List;
+
 import com.huitongio.pete.core.data.Page;
 import com.huitongio.pete.core.util.JsonUtil;
 import com.huitongio.pete.core.util.StringPool;
 import com.huitongio.pete.core.util.StringUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.larkea.openapi.thing.DeviceProperty;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.token.OAuthToken;
-import com.larkea.openapi.ts.TsDevicePropertyData;
-import com.larkea.openapi.ts.TsDevicesPageQueryParam;
-import com.larkea.openapi.ts.TsPropertiesPageQueryParam;
-import com.larkea.openapi.ts.TsPropertyData;
-import com.larkea.openapi.ts.TsPropertyPageQueryParam;
+import com.larkea.openapi.ts.BatchTsPropertyDataPageQueryParam;
+import com.larkea.openapi.ts.DeviceTsPropertyDataPageQueryParam;
+import com.larkea.openapi.ts.TsData;
+import com.larkea.openapi.ts.TsPropertyDataPageQueryParam;
+import com.larkea.openapi.ts.TsPropertyKvEntry;
 import feign.Feign;
 import feign.Logger.Level;
 import feign.RequestInterceptor;
@@ -29,10 +30,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LarkeaClientTest {
 
-	private static LarkeaAuthClient larkeaAuthClient;
-
-	private static LarkeaClient larkeaClient;
-
 	//private static final String url = "http://lark.test.pivaiot.com/api";
 	private static final String url = "http://127.0.0.1:9020";
 
@@ -43,6 +40,10 @@ public class LarkeaClientTest {
 	private static final Level httpLogLevel = Level.BASIC;
 
 	private static final ObjectMapper mapper = JsonUtil.copy();
+
+	private static LarkeaAuthClient larkeaAuthClient;
+
+	private static LarkeaClient larkeaClient;
 
 	@BeforeAll
 	static void init() {
@@ -85,22 +86,24 @@ public class LarkeaClientTest {
 	@Test
 	void listTsPropertyDataTest() {
 		Long propertyId = 50L;
-		TsPropertyPageQueryParam param = new TsPropertyPageQueryParam();
-		Page<TsPropertyData> dataPage = larkeaClient.listTsPropertyData(propertyId, param);
+		TsPropertyDataPageQueryParam param = new TsPropertyDataPageQueryParam();
+		Page<TsPropertyKvEntry> dataPage = larkeaClient.listTsPropertyData(propertyId, param);
 		assertFalse(dataPage.getRows().isEmpty());
 	}
 
 	@Test
 	void listTsPropertiesDateTest() {
-		TsPropertiesPageQueryParam param = new TsPropertiesPageQueryParam();
-		param.setPropertyIdList(StringUtil.join(Lists.newArrayList(47L, 50L), ','));
-		Page<TsDevicePropertyData> dataPage = larkeaClient.listTsPropertiesData(param);
+		BatchTsPropertyDataPageQueryParam param = new BatchTsPropertyDataPageQueryParam();
+		param.setPropertyIdList(StringUtil.join(Lists.newArrayList(47L, 50L), StringPool.COMMA));
+		param.setDeviceIdList(StringUtil.join(Lists.newArrayList(23L, 24L, StringPool.COMMA)));
+		Page<TsPropertyKvEntry> dataPage = larkeaClient.listTsPropertyData(param);
 		System.out.println(dataPage);
 		assertFalse(dataPage.getRows().isEmpty());
 
-		TsDevicesPageQueryParam p = new TsDevicesPageQueryParam();
-		p.setDeviceIdList(StringUtil.join(Lists.newArrayList(23L, 24L, StringPool.COMMA)));
-		dataPage = larkeaClient.listTsDevicesData(p);
+		DeviceTsPropertyDataPageQueryParam p = new DeviceTsPropertyDataPageQueryParam();
+		Long deviceId = 204L;
+		p.setKeyList(StringUtil.join(Lists.newArrayList("action_no"), StringPool.COMMA));
+		dataPage = larkeaClient.listDeviceTsPropertyData(deviceId, p);
 		System.out.println(dataPage);
 		assertFalse(dataPage.getRows().isEmpty());
 	}
@@ -109,10 +112,7 @@ public class LarkeaClientTest {
 	void getDevicePropertyValueTest() {
 		String pk = "2fAhyOX3BxtHMY7lFF1SHS";
 		String dk = "7PyUnXXL199w1EQL78K1pB";
-		DeviceProperty deviceProperty = larkeaClient.getDevicePropertyValue(pk, dk);
-
-		System.out.println(deviceProperty);
-		assertNotNull(deviceProperty);
+		List<TsData> tsDataList = larkeaClient.getDevicePropertyValues(pk, dk);
 	}
 
 	// 所有的接口都添加 token Header
