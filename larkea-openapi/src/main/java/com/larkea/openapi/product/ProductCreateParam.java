@@ -22,8 +22,6 @@ import org.hibernate.validator.constraints.Length;
 @ApiModel(value = "创建产品", description = "产品")
 public class ProductCreateParam {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "产品名称")
 	@NotBlank
 	@Length(min = 4, max = 30)

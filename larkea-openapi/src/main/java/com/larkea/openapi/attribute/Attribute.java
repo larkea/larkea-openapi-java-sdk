@@ -20,8 +20,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Attribute", description = "特性")
 public class Attribute implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "特性主键")
 	private Long id;
 
@@ -29,7 +27,7 @@ public class Attribute implements BaseData {
 	private Long entityId;
 
 	@ApiModelProperty(value = "实体类型")
-	private Integer entityType;
+	private AttributeEntityType entityType;
 
 	@ApiModelProperty(value = "特性标识")
 	private String attrKey;

@@ -19,8 +19,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "ProductCredential", description = "产品密钥")
 public class ProductCredential implements BaseData {
 
-	private static final long serialVersionUID = 1L;
-
 	private Long id;
 
 	private Long productId;

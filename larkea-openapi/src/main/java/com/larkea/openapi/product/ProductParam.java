@@ -22,8 +22,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Product参数", description = "产品")
 public class ProductParam extends BaseModel<Product> {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "租户主键")
 	private Long tenantId;
 

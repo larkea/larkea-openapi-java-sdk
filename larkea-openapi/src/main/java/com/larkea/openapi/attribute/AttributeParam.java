@@ -22,8 +22,6 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Attribute参数", description = "特性")
 public class AttributeParam extends BaseModel<Attribute> {
 
-	private static final long serialVersionUID = 1L;
-
 	@ApiModelProperty(value = "实体主键")
 	private Long entityId;
 
