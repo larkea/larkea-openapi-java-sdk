@@ -4,7 +4,7 @@ plugins {
 
 dependencyManagement {
 	imports {
-		mavenBom("com.huitongio.pete:pete-dependencies:$peteVersion")
+		mavenBom("com.larkea.boot:larkea-boot-dependencies:$larkeaBootVersion")
 		mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
 	}
 }

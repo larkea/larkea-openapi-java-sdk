@@ -16,21 +16,18 @@ public class CommandInfo {
 	@ApiModelProperty(value = "命令主键")
 	private Long id;
 
-	@NotNull
+    @ApiModelProperty(value = "产品主键")
+    private Long productId;
+
 	@ApiModelProperty(value = "产品标识", required = true)
 	private String productKey;
 
-	@NotNull
 	@ApiModelProperty(value = "命令名称", required = true)
-	@Length(min = 1, max = 30)
 	private String name;
 
-	@NotNull
 	@ApiModelProperty(value = "命令标识", required = true)
-	@Length(min = 1, max = 50)
 	private String identifier;
 
-	@NotNull
 	@ApiModelProperty(value = "命令调用方式", required = true)
 	private CommandCallType callType;
 

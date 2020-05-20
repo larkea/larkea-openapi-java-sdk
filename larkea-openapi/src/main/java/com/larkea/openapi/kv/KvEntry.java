@@ -1,6 +1,6 @@
 package com.larkea.openapi.kv;
 
-import com.huitongio.pete.core.data.BaseData;
+import com.larkea.boot.core.data.BaseData;
 
 public interface KvEntry extends BaseData {
 

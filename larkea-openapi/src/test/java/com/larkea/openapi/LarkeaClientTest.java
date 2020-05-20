@@ -2,12 +2,13 @@ package com.larkea.openapi;
 
 import java.util.List;
 
-import com.huitongio.pete.core.data.Page;
-import com.huitongio.pete.core.util.JsonUtil;
-import com.huitongio.pete.core.util.StringPool;
-import com.huitongio.pete.core.util.StringUtil;
+import com.larkea.boot.core.data.Page;
+import com.larkea.boot.core.util.JsonUtil;
+import com.larkea.boot.core.util.StringPool;
+import com.larkea.boot.core.util.StringUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.larkea.openapi.thing.OperationInfo;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.token.OAuthToken;
 import com.larkea.openapi.ts.BatchTsPropertyDataPageQueryParam;
@@ -37,7 +38,7 @@ public class LarkeaClientTest {
 
 	private static final String accessSecret = "p4X9okJWWX6XiIF99DAgyx4lvyK6GOlU";
 
-	private static final Level httpLogLevel = Level.BASIC;
+	private static final Level HTTP_LOG_LEVEL = Level.BASIC;
 
 	private static final ObjectMapper mapper = JsonUtil.copy();
 
@@ -63,7 +64,7 @@ public class LarkeaClientTest {
 		OAuthToken oAuthToken = larkeaAuthClient.getOAuthToken(accessKey, accessSecret);
 		assertNotNull(oAuthToken);
 		larkeaClient = Feign.builder().logger(new Slf4jLogger())
-				.logLevel(httpLogLevel)
+				.logLevel(HTTP_LOG_LEVEL)
 				.queryMapEncoder(new LarkeaQueryMapEncoder())
 				.requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
 				.encoder(new JacksonEncoder(mapper))
@@ -92,10 +93,10 @@ public class LarkeaClientTest {
 	}
 
 	@Test
-	void listTsPropertiesDateTest() {
+	void listTsPropertiesDataTest() {
 		BatchTsPropertyDataPageQueryParam param = new BatchTsPropertyDataPageQueryParam();
 		param.setPropertyIdList(StringUtil.join(Lists.newArrayList(47L, 50L), StringPool.COMMA));
-		param.setDeviceIdList(StringUtil.join(Lists.newArrayList(23L, 24L, StringPool.COMMA)));
+		param.setDeviceIdList(StringUtil.join(Lists.newArrayList(204L, 204L), StringPool.COMMA));
 		Page<TsPropertyKvEntry> dataPage = larkeaClient.listTsPropertyData(param);
 		System.out.println(dataPage);
 		assertFalse(dataPage.getRows().isEmpty());
@@ -114,6 +115,13 @@ public class LarkeaClientTest {
 		String dk = "7PyUnXXL199w1EQL78K1pB";
 		List<TsData> tsDataList = larkeaClient.getDevicePropertyValues(pk, dk);
 	}
+
+	@Test
+    void listProductOperationsTest() {
+	    Long productId = 23L;
+	    List<OperationInfo> operationInfoList = larkeaClient.listProductOperations(productId);
+        System.out.println(operationInfoList);
+    }
 
 	// 所有的接口都添加 token Header
 	private static class TokenInterceptor implements RequestInterceptor {

@@ -1,7 +1,7 @@
 package com.larkea.openapi.product;
 
-import com.huitongio.pete.core.data.EnumData;
-import com.huitongio.pete.core.data.EnumValue;
+import com.larkea.boot.core.data.EnumData;
+import com.larkea.boot.core.data.EnumValue;
 
 import lombok.Getter;
 

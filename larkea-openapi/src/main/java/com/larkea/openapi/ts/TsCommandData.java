@@ -1,6 +1,6 @@
 package com.larkea.openapi.ts;
 
-import com.huitongio.pete.core.data.BaseData;
+import com.larkea.boot.core.data.BaseData;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -1,6 +1,6 @@
 package com.larkea.openapi.product;
 
-import com.huitongio.pete.core.data.BaseData;
+import com.larkea.boot.core.data.BaseData;
 
 import com.larkea.openapi.thing.PubsubFlag;
 import com.larkea.openapi.thing.TopicType;

@@ -3,8 +3,8 @@ package com.larkea.openapi.ts;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import com.huitongio.pete.core.data.BaseData;
-import com.huitongio.pete.core.util.CastUtil;
+import com.larkea.boot.core.data.BaseData;
+import com.larkea.boot.core.util.CastUtil;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

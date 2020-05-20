@@ -1,6 +1,6 @@
 package com.larkea.openapi.thing;
 
-import com.huitongio.pete.core.data.EnumData;
+import com.larkea.boot.core.data.EnumData;
 
 import lombok.Getter;
 

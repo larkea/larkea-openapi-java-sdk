@@ -1,8 +1,8 @@
 package com.larkea.openapi.exception;
 
-import com.huitongio.pete.core.exception.SystemException;
-import com.huitongio.pete.core.result.Result;
-import com.huitongio.pete.core.result.ResultCode;
+import com.larkea.boot.core.exception.SystemException;
+import com.larkea.boot.core.result.Result;
+import com.larkea.boot.core.result.ResultCode;
 
 public class LarkeaException extends SystemException {
 

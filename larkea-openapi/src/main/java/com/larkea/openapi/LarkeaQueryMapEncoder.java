@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import com.huitongio.pete.core.util.CollectionUtil;
-import com.huitongio.pete.core.util.StringUtil;
+import com.larkea.boot.core.util.CollectionUtil;
+import com.larkea.boot.core.util.StringUtil;
 
 import com.google.common.collect.Maps;
 import feign.Param;

@@ -2,7 +2,7 @@ package com.larkea.openapi.thing;
 
 import java.util.Map;
 
-import com.huitongio.pete.core.data.EnumData;
+import com.larkea.boot.core.data.EnumData;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;

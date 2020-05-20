@@ -2,7 +2,7 @@ package com.larkea.openapi.product;
 
 import java.time.LocalDateTime;
 
-import com.huitongio.pete.core.data.BaseData;
+import com.larkea.boot.core.data.BaseData;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

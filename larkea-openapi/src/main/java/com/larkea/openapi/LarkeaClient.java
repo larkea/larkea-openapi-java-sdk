@@ -2,7 +2,7 @@ package com.larkea.openapi;
 
 import java.util.List;
 
-import com.huitongio.pete.core.data.Page;
+import com.larkea.boot.core.data.Page;
 
 import com.larkea.openapi.device.DeviceInfo;
 import com.larkea.openapi.device.DeviceStatusInfo;
@@ -58,7 +58,7 @@ public interface LarkeaClient {
 	@RequestLine("GET /things/properties/values?productKey={pk}&deviceKey={dk}")
 	List<TsData> getDevicePropertyValues(@Param("pk") String pk, @Param("dk") String dk);
 
-	@RequestLine("GET /things/properties/values/batch?deviceIdList={}")
+	@RequestLine("GET /things/properties/values/batch?deviceIdList={deviceIdList}")
 	List<TsPropertyKvEntry> listDevicePropertyValues(@Param("deviceIdList") String deviceIdList);
 
 	@RequestLine("GET /products/{productId}/operations")

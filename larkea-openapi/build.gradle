@@ -4,7 +4,7 @@ plugins {
 
 dependencyManagement {
 	imports {
-		mavenBom("com.huitongio.pete:pete-dependencies:$peteVersion")
+		mavenBom("com.larkea.boot:larkea-boot-dependencies:$larkeaBootVersion")
 		mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
 	}
 }
@@ -20,8 +20,8 @@ dependencies {
 	implementation("org.hibernate.validator:hibernate-validator")
 
 	// API Doc
-	implementation("com.huitongio.pete:pete-core")
-	implementation("com.huitongio.pete:pete-swagger")
+	implementation("com.larkea.boot:larkea-boot-core")
+	implementation("com.larkea.boot:larkea-boot-swagger")
 
 	// Test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
