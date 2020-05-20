@@ -1,6 +1,6 @@
 package com.larkea.openapi;
 
-import com.huitongio.pete.core.util.JsonUtil;
+import com.larkea.boot.core.util.JsonUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.token.OAuthToken;

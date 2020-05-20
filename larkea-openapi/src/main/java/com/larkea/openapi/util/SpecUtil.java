@@ -1,7 +1,7 @@
 package com.larkea.openapi.util;
 
-import com.huitongio.pete.core.util.CastUtil;
-import com.huitongio.pete.core.util.JsonUtil;
+import com.larkea.boot.core.util.CastUtil;
+import com.larkea.boot.core.util.JsonUtil;
 
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;

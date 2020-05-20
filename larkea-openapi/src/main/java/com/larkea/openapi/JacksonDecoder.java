@@ -3,7 +3,7 @@ package com.larkea.openapi;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
-import com.huitongio.pete.core.result.Result;
+import com.larkea.boot.core.result.Result;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;

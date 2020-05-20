@@ -1,6 +1,6 @@
 package com.larkea.openapi.product;
 
-import com.huitongio.pete.core.data.PageQueryParam;
+import com.larkea.boot.core.data.PageQueryParam;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

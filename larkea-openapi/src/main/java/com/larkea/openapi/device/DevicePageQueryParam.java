@@ -1,6 +1,6 @@
 package com.larkea.openapi.device;
 
-import com.huitongio.pete.core.data.PageQueryParam;
+import com.larkea.boot.core.data.PageQueryParam;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

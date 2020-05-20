@@ -1,6 +1,6 @@
 package com.larkea.openapi.exception;
 
-import com.huitongio.pete.core.result.ResultCode;
+import com.larkea.boot.core.result.ResultCode;
 
 public enum LarkeaResultCode implements ResultCode {
 	UPLOAD_FILE_ERROR(LarkeaResultCode.UPLOAD_FILE_ERROR_CODE, "上传文件失败"),
