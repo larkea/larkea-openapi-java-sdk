@@ -14,17 +14,17 @@ import lombok.Data;
 @Data
 public class BoolSpec implements Spec {
 
-	@ApiModelProperty(value = "布尔项", required = true)
-	private Map<String, String> properties = Maps.newHashMap();
+    @ApiModelProperty(value = "布尔项", required = true)
+    private Map<String, String> properties = Maps.newHashMap();
 
-	@JsonAnyGetter
-	public Map<String, String> getProperties() {
-		return properties;
-	}
+    @JsonAnyGetter
+    public Map<String, String> getProperties() {
+        return properties;
+    }
 
-	@JsonAnySetter
-	public void put(String key, String value) {
-		properties.put(key, value);
-	}
+    @JsonAnySetter
+    public void put(String key, String value) {
+        properties.put(key, value);
+    }
 
 }

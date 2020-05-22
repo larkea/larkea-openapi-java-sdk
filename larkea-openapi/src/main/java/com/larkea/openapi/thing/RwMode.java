@@ -1,7 +1,6 @@
 package com.larkea.openapi.thing;
 
 import com.larkea.boot.core.data.EnumData;
-
 import lombok.Getter;
 
 /**
@@ -9,16 +8,16 @@ import lombok.Getter;
  */
 @Getter
 public enum RwMode implements EnumData {
-	R(1, "只读"),
-	RW(2, "读写"),
-	;
+    R(1, "只读"),
+    RW(2, "读写"),
+    ;
 
-	Integer value;
+    Integer value;
 
-	String description;
+    String description;
 
-	RwMode(int value, String description) {
-		this.value = value;
-		this.description = description;
-	}
+    RwMode(int value, String description) {
+        this.value = value;
+        this.description = description;
+    }
 }

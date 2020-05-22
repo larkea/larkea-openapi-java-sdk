@@ -1,7 +1,6 @@
 package com.larkea.openapi.product;
 
 import com.larkea.boot.core.data.EnumData;
-
 import lombok.Getter;
 
 /**
@@ -9,19 +8,19 @@ import lombok.Getter;
  */
 @Getter
 public enum NetType implements EnumData {
-	WIFI(1, "Wi-Fi"),
-	CELLULAR(2, "蜂窝网络(2G/3G/4G/5G)"),
-	ETHERNET(3, "以太网络"),
-	LORAWAN(4, "LoRaWan"),
-	OTHER(99, "其它");
+    WIFI(1, "Wi-Fi"),
+    CELLULAR(2, "蜂窝网络(2G/3G/4G/5G)"),
+    ETHERNET(3, "以太网络"),
+    LORAWAN(4, "LoRaWan"),
+    OTHER(99, "其它");
 
-	Integer value;
+    Integer value;
 
-	String description;
+    String description;
 
-	NetType(int value, String description) {
-		this.value = value;
-		this.description = description;
-	}
+    NetType(int value, String description) {
+        this.value = value;
+        this.description = description;
+    }
 
 }

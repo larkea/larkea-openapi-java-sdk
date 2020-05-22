@@ -3,7 +3,6 @@ package com.larkea.openapi.autoconfigure;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.JacksonDecoder;
 import com.larkea.openapi.LarkeaAuthClient;
-import com.larkea.openapi.LarkeaClientProperties;
 import com.larkea.openapi.Slf4jLogger;
 import feign.Feign;
 import feign.Logger.Level;
@@ -18,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties({
 		LarkeaClientProperties.class
 })
-public class LarkAuthClientConfig {
+public class LarkeaAuthClientConfig {
 
 	@Bean
 	LarkeaAuthClient larkAuthClient(LarkeaClientProperties larkeaClientProperties, ObjectMapper mapper) {

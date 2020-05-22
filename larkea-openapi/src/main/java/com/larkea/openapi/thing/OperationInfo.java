@@ -3,13 +3,9 @@ package com.larkea.openapi.thing;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.hibernate.validator.constraints.Length;
 
 @Data
 @Accessors(chain = true)

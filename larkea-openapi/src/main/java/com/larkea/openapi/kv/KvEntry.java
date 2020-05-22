@@ -4,10 +4,10 @@ import com.larkea.boot.core.data.BaseData;
 
 public interface KvEntry extends BaseData {
 
-	String getKey();
+    String getKey();
 
-	Object getValue();
+    Object getValue();
 
-	String getValueAsString();
+    String getValueAsString();
 
 }

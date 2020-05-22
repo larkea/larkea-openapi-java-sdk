@@ -1,7 +1,6 @@
 package com.larkea.openapi.product;
 
 import com.larkea.boot.core.data.EnumData;
-
 import lombok.Getter;
 
 /**
@@ -9,17 +8,17 @@ import lombok.Getter;
  */
 @Getter
 public enum NodeType implements EnumData {
-	DIRECT(1, "直连设备"),
-	NOT_DIRECT(2, "网关子设备"),
-	GATEWAY(3, "网关设备"),
-	;
+    DIRECT(1, "直连设备"),
+    NOT_DIRECT(2, "网关子设备"),
+    GATEWAY(3, "网关设备"),
+    ;
 
-	Integer value;
+    Integer value;
 
-	String description;
+    String description;
 
-	NodeType(int value, String description) {
-		this.value = value;
-		this.description = description;
-	}
+    NodeType(int value, String description) {
+        this.value = value;
+        this.description = description;
+    }
 }

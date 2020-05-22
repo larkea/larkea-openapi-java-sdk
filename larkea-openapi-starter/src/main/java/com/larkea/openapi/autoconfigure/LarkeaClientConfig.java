@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.larkea.openapi.JacksonDecoder;
 import com.larkea.openapi.LarkeaAuthClient;
 import com.larkea.openapi.LarkeaClient;
-import com.larkea.openapi.LarkeaClientProperties;
 import com.larkea.openapi.LarkeaQueryMapEncoder;
 import com.larkea.openapi.Slf4jLogger;
 import com.larkea.openapi.token.OAuthToken;
@@ -19,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration
-public class LarkClientConfig {
+public class LarkeaClientConfig {
 
 	@Bean
 	LarkeaClient larkClient(LarkeaAuthClient larkeaAuthClient, LarkeaClientProperties larkeaClientProperties,

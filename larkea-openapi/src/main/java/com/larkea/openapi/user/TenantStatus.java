@@ -1,21 +1,20 @@
 package com.larkea.openapi.user;
 
 import com.larkea.boot.core.data.EnumData;
-
 import lombok.Getter;
 
 @Getter
 public enum TenantStatus implements EnumData {
-	ENABLED(1, "正常"),
-	DISABLED(2, "停用");
+    ENABLED(1, "正常"),
+    DISABLED(2, "停用");
 
-	Integer value;
+    Integer value;
 
-	String description;
+    String description;
 
-	TenantStatus(Integer value, String description) {
-		this.value = value;
-		this.description = description;
-	}
+    TenantStatus(Integer value, String description) {
+        this.value = value;
+        this.description = description;
+    }
 
 }

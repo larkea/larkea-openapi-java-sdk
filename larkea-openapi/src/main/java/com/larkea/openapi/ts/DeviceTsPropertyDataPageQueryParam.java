@@ -7,6 +7,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class DeviceTsPropertyDataPageQueryParam extends TsPropertyDataPageQueryParam {
 
-	private String keyList;
+    private String keyList;
 
 }

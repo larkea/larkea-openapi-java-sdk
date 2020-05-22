@@ -5,7 +5,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import com.larkea.boot.core.model.BaseModel;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -26,14 +25,14 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "创建设备参数", description = "设备")
 public class DeviceBatchCreateParam extends BaseModel<Device> {
 
-	@ApiModelProperty(value = "产品主键", required = true)
-	@NotNull
-	private String productKey;
+    @ApiModelProperty(value = "产品主键", required = true)
+    @NotNull
+    private String productKey;
 
-	@ApiModelProperty(value = "设备数量", required = true)
-	@Max(2000)
-	@Min(1)
-	@NotNull
-	private Integer deviceCount;
+    @ApiModelProperty(value = "设备数量", required = true)
+    @Max(2000)
+    @Min(1)
+    @NotNull
+    private Integer deviceCount;
 
 }

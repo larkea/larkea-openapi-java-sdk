@@ -21,12 +21,12 @@ import org.hibernate.validator.constraints.Length;
 @ApiModel(value = "编辑产品", description = "产品")
 public class ProductUpdateParam {
 
-	@ApiModelProperty(value = "产品名称")
-	@NotBlank
-	@Length(min = 4, max = 30)
-	private String name;
+    @ApiModelProperty(value = "产品名称")
+    @NotBlank
+    @Length(min = 4, max = 30)
+    private String name;
 
-	@ApiModelProperty(value = "产品描述")
-	private String description;
+    @ApiModelProperty(value = "产品描述")
+    private String description;
 
 }

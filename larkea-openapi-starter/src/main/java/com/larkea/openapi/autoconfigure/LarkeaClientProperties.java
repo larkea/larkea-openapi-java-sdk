@@ -1,4 +1,4 @@
-package com.larkea.openapi;
+package com.larkea.openapi.autoconfigure;
 
 import feign.Logger.Level;
 import lombok.Data;
