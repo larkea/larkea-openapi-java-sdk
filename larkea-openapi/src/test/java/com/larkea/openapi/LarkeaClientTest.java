@@ -31,8 +31,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LarkeaClientTest {
 
-	//private static final String url = "http://lark.test.pivaiot.com/api";
-	private static final String url = "http://127.0.0.1:9020";
+	private static final String url = "http://lark.test.pivaiot.com/api";
+	//private static final String url = "http://127.0.0.1:9020";
 
 	private static final String accessKey = "111111111111111111111";
 
@@ -87,8 +87,9 @@ public class LarkeaClientTest {
 	@Test
 	void listTsPropertyDataTest() {
 		Long propertyId = 50L;
+		Long deviceId = 204L;
 		TsPropertyDataPageQueryParam param = new TsPropertyDataPageQueryParam();
-		Page<TsPropertyKvEntry> dataPage = larkeaClient.listTsPropertyData(propertyId, param);
+		Page<TsPropertyKvEntry> dataPage = larkeaClient.listTsPropertyData(deviceId, propertyId, param);
 		assertFalse(dataPage.getRows().isEmpty());
 	}
 

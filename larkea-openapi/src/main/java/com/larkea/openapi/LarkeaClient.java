@@ -43,9 +43,11 @@ public interface LarkeaClient {
 	@RequestLine("GET /things/events/{eventId}")
 	EventInfo getEvent(@Param("eventId") Long eventId);
 
-	@RequestLine("GET /timeseries/properties/{propertyId}")
-	Page<TsPropertyKvEntry> listTsPropertyData(@Param("propertyId") Long propertyId,
-			@QueryMap TsPropertyDataPageQueryParam param);
+    @RequestLine("GET /timeseries/properties/{propertyId}?deviceId={deviceId}")
+    Page<TsPropertyKvEntry> listTsPropertyData(
+            @Param("propertyId") Long propertyId,
+            @Param("deviceId") Long deviceId,
+            @QueryMap TsPropertyDataPageQueryParam param);
 
 	@RequestLine("GET /timeseries/properties")
 	Page<TsPropertyKvEntry> listTsPropertyData(@QueryMap BatchTsPropertyDataPageQueryParam param);
