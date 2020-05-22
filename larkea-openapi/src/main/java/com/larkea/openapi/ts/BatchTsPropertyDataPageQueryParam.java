@@ -7,8 +7,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class BatchTsPropertyDataPageQueryParam extends TsPropertyDataPageQueryParam {
 
-	private String deviceIdList;
+    private String deviceIdList;
 
-	private String propertyIdList;
+    private String propertyIdList;
 
 }

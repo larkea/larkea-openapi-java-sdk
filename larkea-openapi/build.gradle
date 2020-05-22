@@ -1,29 +1,30 @@
 plugins {
-	id("io.spring.dependency-management")
+    id("io.spring.dependency-management")
 }
 
 dependencyManagement {
-	imports {
-		mavenBom("com.larkea.boot:larkea-boot-dependencies:$larkeaBootVersion")
-		mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
-	}
+    imports {
+        mavenBom("com.larkea.boot:larkea-boot-dependencies:$larkeaBootVersion")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    }
 }
 
 dependencies {
-	// Util
-	annotationProcessor("org.projectlombok:lombok")
-	implementation("org.projectlombok:lombok")
-	implementation("io.github.openfeign:feign-core")
-	implementation("io.github.openfeign:feign-jackson")
-	implementation("io.github.openfeign:feign-slf4j")
-	implementation("io.github.openfeign.form:feign-form")
-	implementation("org.hibernate.validator:hibernate-validator")
+    // Util
+    annotationProcessor("org.projectlombok:lombok")
+    implementation("org.projectlombok:lombok")
+    implementation("io.github.openfeign:feign-core")
+    implementation("io.github.openfeign:feign-jackson")
+    implementation("io.github.openfeign:feign-slf4j")
+    implementation("io.github.openfeign.form:feign-form")
+    implementation("org.hibernate.validator:hibernate-validator")
 
-	// API Doc
-	implementation("com.larkea.boot:larkea-boot-core")
-	implementation("com.larkea.boot:larkea-boot-swagger")
+    // API Doc
+    implementation("io.springfox:springfox-swagger2")
+    implementation("io.springfox:springfox-bean-validators")
+    api("com.larkea.boot:larkea-boot-core")
 
-	// Test
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+    // Test
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

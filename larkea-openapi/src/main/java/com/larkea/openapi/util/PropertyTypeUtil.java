@@ -11,42 +11,42 @@ import com.google.common.collect.Sets;
  */
 public class PropertyTypeUtil {
 
-	private static final Set<Class<?>> typesSupported = Sets.newHashSet();
+    private static final Set<Class<?>> typesSupported = Sets.newHashSet();
 
-	static {
-		typesSupported.add(Byte.class);
-		typesSupported.add(Short.class);
-		typesSupported.add(Integer.class);
-		typesSupported.add(Long.class);
-		typesSupported.add(BigInteger.class);
-		typesSupported.add(Float.class);
-		typesSupported.add(Double.class);
-		typesSupported.add(BigDecimal.class);
-		typesSupported.add(Boolean.class);
-		typesSupported.add(String.class);
-	}
+    static {
+        typesSupported.add(Byte.class);
+        typesSupported.add(Short.class);
+        typesSupported.add(Integer.class);
+        typesSupported.add(Long.class);
+        typesSupported.add(BigInteger.class);
+        typesSupported.add(Float.class);
+        typesSupported.add(Double.class);
+        typesSupported.add(BigDecimal.class);
+        typesSupported.add(Boolean.class);
+        typesSupported.add(String.class);
+    }
 
-	private PropertyTypeUtil() {
-	}
+    private PropertyTypeUtil() {
+    }
 
-	public static boolean isTypeOfValueSupported(Object value) {
-		if (value instanceof Byte
-				|| value instanceof Short
-				|| value instanceof Integer
-				|| value instanceof Long
-				|| value instanceof BigInteger
-				|| value instanceof Float
-				|| value instanceof Double
-				|| value instanceof BigDecimal
-				|| value instanceof Boolean
-				|| value instanceof String) {
-			return true;
-		}
+    public static boolean isTypeOfValueSupported(Object value) {
+        if (value instanceof Byte
+                || value instanceof Short
+                || value instanceof Integer
+                || value instanceof Long
+                || value instanceof BigInteger
+                || value instanceof Float
+                || value instanceof Double
+                || value instanceof BigDecimal
+                || value instanceof Boolean
+                || value instanceof String) {
+            return true;
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	public static boolean isTypeOfValueSupported2(Object value) {
-		return typesSupported.contains(value.getClass());
-	}
+    public static boolean isTypeOfValueSupported2(Object value) {
+        return typesSupported.contains(value.getClass());
+    }
 }

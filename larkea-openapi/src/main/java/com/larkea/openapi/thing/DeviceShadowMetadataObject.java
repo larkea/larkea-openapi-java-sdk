@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class DeviceShadowMetadataObject {
 
-	private Long ts;
+    private Long ts;
 
 }

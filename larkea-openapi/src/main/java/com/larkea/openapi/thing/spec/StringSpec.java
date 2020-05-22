@@ -13,10 +13,10 @@ import lombok.Data;
 @Data
 public class StringSpec implements Spec {
 
-	@ApiModelProperty(value = "最大长度", required = true)
-	@NotNull
-	@Min(1)
-	@Max(100)
-	private Integer length;
+    @ApiModelProperty(value = "最大长度", required = true)
+    @NotNull
+    @Min(1)
+    @Max(100)
+    private Integer length;
 
 }

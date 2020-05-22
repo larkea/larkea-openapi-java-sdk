@@ -10,13 +10,13 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class FloatSpec extends NumberSpec {
 
-	@ApiModelProperty(value = "步长", required = true)
-	private Double step;
+    @ApiModelProperty(value = "步长", required = true)
+    private Double step;
 
-	@ApiModelProperty(value = "最小值", required = true)
-	private Double min;
+    @ApiModelProperty(value = "最小值", required = true)
+    private Double min;
 
-	@ApiModelProperty(value = "最大值", required = true)
-	private Double max;
+    @ApiModelProperty(value = "最大值", required = true)
+    private Double max;
 
 }

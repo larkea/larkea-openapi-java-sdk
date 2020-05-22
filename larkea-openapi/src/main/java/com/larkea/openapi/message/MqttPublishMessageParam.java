@@ -11,17 +11,17 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class MqttPublishMessageParam {
 
-	@ApiModelProperty(value = "主题", required = true)
-	@NotNull
-	@NotBlank
-	private String topicName;
+    @ApiModelProperty(value = "主题", required = true)
+    @NotNull
+    @NotBlank
+    private String topicName;
 
-	@ApiModelProperty(value = "消息体", required = true)
-	@NotNull
-	@NotBlank
-	private String messagePayload;
+    @ApiModelProperty(value = "消息体", required = true)
+    @NotNull
+    @NotBlank
+    private String messagePayload;
 
-	@ApiModelProperty(value = "Qos, 0或者1")
-	private Integer qos = 0;
+    @ApiModelProperty(value = "Qos, 0或者1")
+    private Integer qos = 0;
 
 }

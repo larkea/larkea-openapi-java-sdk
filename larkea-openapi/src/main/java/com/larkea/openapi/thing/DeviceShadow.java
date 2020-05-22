@@ -5,12 +5,12 @@ import lombok.Data;
 @Data
 public class DeviceShadow {
 
-	private DeviceShadowState state = new DeviceShadowState();
+    private DeviceShadowState state = new DeviceShadowState();
 
-	private DeviceShadowMetadata metadata = new DeviceShadowMetadata();
+    private DeviceShadowMetadata metadata = new DeviceShadowMetadata();
 
-	private Long ts;
+    private Long ts;
 
-	private Long version;
+    private Long version;
 
 }
