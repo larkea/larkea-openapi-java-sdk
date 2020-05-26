@@ -5,6 +5,7 @@ import java.util.List;
 import com.larkea.boot.core.data.Page;
 import com.larkea.boot.core.data.PageQueryParam;
 import com.larkea.openapi.device.DeviceInfo;
+import com.larkea.openapi.device.DevicePageQueryParam;
 import com.larkea.openapi.device.DeviceStatusInfo;
 import com.larkea.openapi.thing.CommandInfo;
 import com.larkea.openapi.thing.EventInfo;
@@ -23,7 +24,7 @@ import feign.RequestLine;
 public interface LarkeaClient {
 
     @RequestLine("GET /devices")
-    Page<DeviceInfo> listDevices(PageQueryParam pageQueryParam);
+    Page<DeviceInfo> listDevices(@QueryMap DevicePageQueryParam devicePageQueryParam);
 
     @RequestLine("GET /devices/{deviceId}")
     DeviceInfo getDeviceById(@Param("deviceId") Long deviceId);
