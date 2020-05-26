@@ -7,6 +7,7 @@ import com.larkea.boot.core.data.Page;
 import com.larkea.boot.core.util.JsonUtil;
 import com.larkea.boot.core.util.StringPool;
 import com.larkea.boot.core.util.StringUtil;
+import com.larkea.openapi.device.DevicePageQueryParam;
 import com.larkea.openapi.thing.OperationInfo;
 import com.larkea.openapi.thing.ThingModel;
 import com.larkea.openapi.token.OAuthToken;
@@ -73,7 +74,9 @@ public class LarkeaClientTest {
 
     @Test
     void listDevicesTest() {
-        assertTrue(larkeaClient.listDevices().getTotal() > 0);
+		DevicePageQueryParam devicePageQueryParam = new DevicePageQueryParam();
+		devicePageQueryParam.setLimit(1000);
+        assertTrue(larkeaClient.listDevices(devicePageQueryParam).getTotal() > 0);
     }
 
     @Test
