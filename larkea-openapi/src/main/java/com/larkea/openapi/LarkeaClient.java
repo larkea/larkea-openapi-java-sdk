@@ -46,8 +46,8 @@ public interface LarkeaClient {
 
     @RequestLine("GET /timeseries/properties/{propertyId}?deviceId={deviceId}")
     Page<TsPropertyKvEntry> listTsPropertyData(
-            @Param("propertyId") Long propertyId,
-            @Param("deviceId") Long deviceId,
+			@Param("deviceId") Long deviceId,
+			@Param("propertyId") Long propertyId,
             @QueryMap TsPropertyDataPageQueryParam param);
 
     @RequestLine("GET /timeseries/properties")
