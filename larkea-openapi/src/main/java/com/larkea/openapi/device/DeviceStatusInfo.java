@@ -17,10 +17,10 @@ public class DeviceStatusInfo {
     @ApiModelProperty(value = "设备固件版本")
     private String firmwareVersion;
 
-    @ApiModelProperty(value = "激活时间")
-    private LocalDateTime gmtActive;
+	@ApiModelProperty(value = "激活时间")
+	private LocalDateTime gmtActivated;
 
-    @ApiModelProperty(value = "最后上线时间")
+	@ApiModelProperty(value = "最后上线时间")
     private LocalDateTime gmtOnline;
 
     @ApiModelProperty(value = "最后下线线时间")

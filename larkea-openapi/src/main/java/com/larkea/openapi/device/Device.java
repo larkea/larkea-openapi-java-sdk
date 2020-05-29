@@ -49,12 +49,15 @@ public class Device implements BaseData {
     private String firmwareVersion;
 
     @ApiModelProperty(value = "激活时间")
-    private LocalDateTime gmtActive;
+    private LocalDateTime gmtActivated;
 
     @ApiModelProperty(value = "最后上线时间")
     private LocalDateTime gmtOnline;
 
-    @ApiModelProperty(value = "状态")
+	@ApiModelProperty(value = "最后下线时间")
+	private LocalDateTime gmtOffline;
+
+	@ApiModelProperty(value = "状态")
     private DeviceStatus status;
 
 }
