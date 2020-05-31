@@ -17,6 +17,7 @@ import com.larkea.openapi.ts.DeviceTsPropertyDataPageQueryParam;
 import com.larkea.openapi.ts.TsData;
 import com.larkea.openapi.ts.TsPropertyDataPageQueryParam;
 import com.larkea.openapi.ts.TsPropertyKvEntry;
+import feign.Headers;
 import feign.Param;
 import feign.QueryMap;
 import feign.RequestLine;
@@ -66,5 +67,12 @@ public interface LarkeaClient {
 
     @RequestLine("GET /products/{productId}/operations")
     List<OperationInfo> listProductOperations(@Param("productId") Long productId);
+
+	@RequestLine("POST /messages/publish")
+	@Headers("Content-Type: application/x-www-form-urlencoded")
+	Boolean publishMessage(
+			@Param("topicName") String topicName,
+			@Param("messagePayload") String messagePayload,
+			@Param("qos") Integer qos);
 
 }
