@@ -31,14 +31,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LarkeaClientTest {
 
-    private static final String url = "http://lark.test.pivaiot.com/api";
-    //private static final String url = "http://127.0.0.1:9020";
+    //private static final String url = "http://lark.test.pivaiot.com/api";
+    private static final String url = "http://127.0.0.1:9020";
 
     private static final String accessKey = "111111111111111111111";
 
     private static final String accessSecret = "p4X9okJWWX6XiIF99DAgyx4lvyK6GOlU";
 
-    private static final Level HTTP_LOG_LEVEL = Level.BASIC;
+    private static final Level HTTP_LOG_LEVEL = Level.FULL;
 
     private static final ObjectMapper mapper = JsonUtil.copy();
 
@@ -67,7 +67,7 @@ public class LarkeaClientTest {
                 .logLevel(HTTP_LOG_LEVEL)
                 .queryMapEncoder(new LarkeaQueryMapEncoder())
                 .requestInterceptor(new TokenInterceptor(oAuthToken.getAccessToken()))
-                .encoder(new JacksonEncoder(mapper))
+                .encoder(new LarkeaEncoder(mapper))
                 .decoder(new JacksonDecoder(mapper))
                 .target(LarkeaClient.class, url);
     }
@@ -125,6 +125,15 @@ public class LarkeaClientTest {
         List<OperationInfo> operationInfoList = larkeaClient.listProductOperations(productId);
         System.out.println(operationInfoList);
     }
+
+    @Test
+	void publishMessageTest() {
+    	String topicName = "/sys/2fAhyOX3BxtHMY7lFF1SHS/7PyUnXXL199w1EQL78K1pB/thing/property/set";
+    	String payload = "{\"properties\":{\"component_no\":2,\"action_no\":3,\"cmd_type\":1}}";
+    	Integer qos = 0;
+
+    	larkeaClient.publishMessage(topicName, payload, qos);
+	}
 
     // 所有的接口都添加 token Header
     private static class TokenInterceptor implements RequestInterceptor {
