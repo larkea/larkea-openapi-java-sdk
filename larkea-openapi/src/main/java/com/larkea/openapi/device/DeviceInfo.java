@@ -46,7 +46,7 @@ public class DeviceInfo extends BaseModel<Device> {
     private String firmwareVersion;
 
     @ApiModelProperty(value = "激活时间")
-    private LocalDateTime gmtActive;
+    private LocalDateTime gmtActivated;
 
     @ApiModelProperty(value = "最后上线时间")
     private LocalDateTime gmtOnline;
