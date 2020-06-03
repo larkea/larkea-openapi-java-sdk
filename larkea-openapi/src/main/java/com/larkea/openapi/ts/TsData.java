@@ -1,5 +1,6 @@
 package com.larkea.openapi.ts;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -18,6 +19,7 @@ public class TsData implements TsKvEntry {
     private Long ts;
 
     @Override
+	@JsonIgnore
     public String getValueAsString() {
         return String.valueOf(value);
     }
