@@ -30,6 +30,9 @@ public interface LarkeaClient {
     @RequestLine("GET /devices/{deviceId}")
     DeviceInfo getDeviceById(@Param("deviceId") Long deviceId);
 
+    @RequestLine("GET /devices/device_info?productKey={productKey}&deviceKey={deviceKey}")
+    DeviceInfo getDeviceByPkAndDk(@Param("productKey") String productKey, @Param("deviceKey") String deviceKey);
+
     @RequestLine("GET /devices/{deviceId}/status")
     DeviceStatusInfo getDeviceStatusById(@Param("deviceId") Long deviceId);
 
