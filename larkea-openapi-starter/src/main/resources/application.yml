@@ -1,6 +1,6 @@
 larkea:
   url: https://larkea.staging.pivaiot.com/api
-  accessKey: SrOQvh5AOR4rZ9Wtd
+  accessKey: SrOQvh5AOR4rZ9Wt
   accessSecret: p4X9okJWWX6XiIF99DAgyx4lvyK6GOlU
   httpLogLevel: FULL
 logging:
