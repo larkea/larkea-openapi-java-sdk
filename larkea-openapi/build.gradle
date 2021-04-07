@@ -19,7 +19,11 @@ dependencies {
     implementation("io.github.openfeign.form:feign-form")
     implementation("org.hibernate.validator:hibernate-validator")
 
-    // API Doc
+	// Error code
+	api("com.larkea.iot:larkea-iot-exception:2021.4.93.103")
+	api("com.larkea.usercenter:larkea-usercenter-exception:2021.4.137.33")
+
+	// API Doc
     implementation("io.springfox:springfox-swagger2")
     implementation("io.springfox:springfox-bean-validators")
     api("com.larkea.boot:larkea-boot-core")

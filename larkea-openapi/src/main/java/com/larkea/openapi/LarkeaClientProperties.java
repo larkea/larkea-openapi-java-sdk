@@ -14,4 +14,6 @@ public class LarkeaClientProperties {
 
 	private Level httpLogLevel;
 
+	private Boolean lazy = true;
+
 }

@@ -23,7 +23,7 @@ import feign.Param;
 import feign.QueryMap;
 import feign.RequestLine;
 
-public interface LarkeaClient {
+public interface LarkeaClient extends LarkeaAuthClient {
 
 	@RequestLine("GET /products")
 	Page<ProductInfo> listProducts(@QueryMap ProductPageQueryParam productPageQueryParam);
