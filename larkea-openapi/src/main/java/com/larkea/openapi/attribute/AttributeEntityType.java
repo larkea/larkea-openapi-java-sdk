@@ -5,17 +5,17 @@ import lombok.Getter;
 
 @Getter
 public enum AttributeEntityType implements EnumData {
-    PRODUCT(1, "产品"),
-    DEVICE(2, "设备"),
-    ;
+	PRODUCT(1, "产品"),
+	DEVICE(2, "设备"),
+	;
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    AttributeEntityType(int value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	AttributeEntityType(int value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 
 }

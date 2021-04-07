@@ -23,28 +23,28 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "DataSpecInfo", description = "数据规范")
 public class DataSpecInfo extends BaseModel<DataSpec> {
 
-    @ApiModelProperty(value = "数据规范主键")
-    private Long id;
+	@ApiModelProperty(value = "数据规范主键")
+	private Long id;
 
-    @ApiModelProperty(value = "功能类型")
-    private Long operationId;
+	@ApiModelProperty(value = "功能类型")
+	private Long operationId;
 
-    @ApiModelProperty(value = "父数据规范主键")
-    private Long parentId;
+	@ApiModelProperty(value = "父数据规范主键")
+	private Long parentId;
 
-    @ApiModelProperty(value = "名称")
-    private String name;
+	@ApiModelProperty(value = "名称")
+	private String name;
 
-    @ApiModelProperty(value = "标识符")
-    private String identifier;
+	@ApiModelProperty(value = "标识符")
+	private String identifier;
 
-    @ApiModelProperty(value = "数据类型")
-    private DataType dataType;
+	@ApiModelProperty(value = "数据类型")
+	private DataType dataType;
 
-    @ApiModelProperty(value = "入参出参")
-    private ParamDirection paramDirection;
+	@ApiModelProperty(value = "入参出参")
+	private ParamDirection paramDirection;
 
-    @ApiModelProperty(value = "数据规范")
-    private Map<String, Object> spec;
+	@ApiModelProperty(value = "数据规范")
+	private Map<String, Object> spec;
 
 }

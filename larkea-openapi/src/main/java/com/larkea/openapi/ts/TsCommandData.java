@@ -19,31 +19,31 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "TsCommandData", description = "命令时序数据")
 public class TsCommandData implements BaseData {
 
-    @ApiModelProperty(value = "时序属性值主键")
-    private Long id;
+	@ApiModelProperty(value = "时序属性值主键")
+	private Long id;
 
-    @ApiModelProperty(value = "租户主键")
-    private Long tenantId;
+	@ApiModelProperty(value = "租户主键")
+	private Long tenantId;
 
-    @ApiModelProperty(value = "产品主键")
-    private Long productId;
+	@ApiModelProperty(value = "产品主键")
+	private Long productId;
 
-    @ApiModelProperty(value = "设备主键")
-    private Long deviceId;
+	@ApiModelProperty(value = "设备主键")
+	private Long deviceId;
 
-    @ApiModelProperty(value = "产品功能主键")
-    private Long operationId;
+	@ApiModelProperty(value = "产品功能主键")
+	private Long operationId;
 
-    @ApiModelProperty(value = "命令发送时间戳")
-    private Long tsSent;
+	@ApiModelProperty(value = "命令发送时间戳")
+	private Long tsSent;
 
-    @ApiModelProperty(value = "命令完成时间戳")
-    private Long tsReceived;
+	@ApiModelProperty(value = "命令完成时间戳")
+	private Long tsReceived;
 
-    @ApiModelProperty(value = "输入参数")
-    private String inputV;
+	@ApiModelProperty(value = "输入参数")
+	private String inputV;
 
-    @ApiModelProperty(value = "输出参数")
-    private String outputV;
+	@ApiModelProperty(value = "输出参数")
+	private String outputV;
 
 }

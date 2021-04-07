@@ -13,6 +13,7 @@ import com.larkea.openapi.thing.EventInfo;
 import com.larkea.openapi.thing.OperationInfo;
 import com.larkea.openapi.thing.PropertyInfo;
 import com.larkea.openapi.thing.ThingModel;
+import com.larkea.openapi.token.OAuthToken;
 import com.larkea.openapi.ts.BatchTsPropertyDataPageQueryParam;
 import com.larkea.openapi.ts.DeviceTsPropertyDataPageQueryParam;
 import com.larkea.openapi.ts.TsData;
@@ -24,6 +25,10 @@ import feign.QueryMap;
 import feign.RequestLine;
 
 public interface LarkeaClient {
+
+	@RequestLine("POST /oauth2/token?grantType=CLIENT_CREDENTIALS&accessKey={accessKey}&accessSecret={accessSecret}")
+	OAuthToken getOAuthToken(@Param("accessKey") String accessKey,
+			@Param("accessSecret") String accessSecret);
 
 	@RequestLine("GET /products")
 	Page<ProductInfo> listProducts(@QueryMap ProductPageQueryParam productPageQueryParam);

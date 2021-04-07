@@ -19,31 +19,31 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "DeviceMessage", description = "设备消息")
 public class DeviceMessage implements BaseData {
 
-    @ApiModelProperty(value = "消息主键")
-    private Long id;
+	@ApiModelProperty(value = "消息主键")
+	private Long id;
 
-    @ApiModelProperty(value = "租户主键")
-    private Long tenantId;
+	@ApiModelProperty(value = "租户主键")
+	private Long tenantId;
 
-    @ApiModelProperty(value = "产品主键")
-    private Long productId;
+	@ApiModelProperty(value = "产品主键")
+	private Long productId;
 
-    @ApiModelProperty(value = "设备主键")
-    private Long deviceId;
+	@ApiModelProperty(value = "设备主键")
+	private Long deviceId;
 
-    @ApiModelProperty(value = "消息上下行")
-    private Integer direction;
+	@ApiModelProperty(value = "消息上下行")
+	private Integer direction;
 
-    @ApiModelProperty(value = "时间戳")
-    private Long ts;
+	@ApiModelProperty(value = "时间戳")
+	private Long ts;
 
-    @ApiModelProperty(value = "类型")
-    private Integer msgType;
+	@ApiModelProperty(value = "类型")
+	private Integer msgType;
 
-    @ApiModelProperty(value = "消息状态")
-    private Integer status;
+	@ApiModelProperty(value = "消息状态")
+	private Integer status;
 
-    @ApiModelProperty(value = "内容")
-    private String content;
+	@ApiModelProperty(value = "内容")
+	private String content;
 
 }

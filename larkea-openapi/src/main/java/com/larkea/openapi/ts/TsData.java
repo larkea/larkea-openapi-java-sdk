@@ -9,18 +9,18 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class TsData implements TsKvEntry {
 
-    @ApiModelProperty(value = "属性标识符")
-    private String key;
+	@ApiModelProperty(value = "属性标识符")
+	private String key;
 
-    @ApiModelProperty(value = "值")
-    private Object value;
+	@ApiModelProperty(value = "值")
+	private Object value;
 
-    @ApiModelProperty(value = "数据时间戳")
-    private Long ts;
+	@ApiModelProperty(value = "数据时间戳")
+	private Long ts;
 
-    @Override
+	@Override
 	@JsonIgnore
-    public String getValueAsString() {
-        return String.valueOf(value);
-    }
+	public String getValueAsString() {
+		return String.valueOf(value);
+	}
 }

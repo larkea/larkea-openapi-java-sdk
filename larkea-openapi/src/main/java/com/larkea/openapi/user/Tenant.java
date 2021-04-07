@@ -19,19 +19,19 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Tenant", description = "租户")
 public class Tenant implements BaseData {
 
-    @ApiModelProperty(value = "租户主键")
-    private Long id;
+	@ApiModelProperty(value = "租户主键")
+	private Long id;
 
-    @ApiModelProperty(value = "租户标识")
-    private String tenantKey;
+	@ApiModelProperty(value = "租户标识")
+	private String tenantKey;
 
-    @ApiModelProperty(value = "租户名称")
-    private String tenantName;
+	@ApiModelProperty(value = "租户名称")
+	private String tenantName;
 
-    @ApiModelProperty(value = "租户类型")
-    private TenantType tenantType;
+	@ApiModelProperty(value = "租户类型")
+	private TenantType tenantType;
 
-    @ApiModelProperty(value = "状态")
-    private TenantStatus status;
+	@ApiModelProperty(value = "状态")
+	private TenantStatus status;
 
 }

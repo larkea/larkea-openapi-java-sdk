@@ -8,8 +8,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class ProductPageQueryParam extends PageQueryParam {
 
-    private String name;
+	private String name;
 
-    private String productKey;
+	private String productKey;
 
 }

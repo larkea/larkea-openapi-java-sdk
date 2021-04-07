@@ -5,16 +5,16 @@ import lombok.Getter;
 
 @Getter
 public enum TenantType implements EnumData {
-    PERSONAL(1, "个人"),
-    COMPANY(2, "企业");
+	PERSONAL(1, "个人"),
+	COMPANY(2, "企业");
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    TenantType(Integer value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	TenantType(Integer value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 
 }

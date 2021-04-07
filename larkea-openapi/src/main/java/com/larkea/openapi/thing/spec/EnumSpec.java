@@ -14,21 +14,21 @@ import lombok.Data;
 @ApiModel(value = "枚举类型的数据规范定义")
 public class EnumSpec implements Spec {
 
-    @ApiModelProperty(value = "枚举项", required = true)
-    private Map<String, String> properties = Maps.newHashMap();
+	@ApiModelProperty(value = "枚举项", required = true)
+	private Map<String, String> properties = Maps.newHashMap();
 
-    @JsonAnyGetter
-    public Map<String, String> getProperties() {
-        return properties;
-    }
+	@JsonAnyGetter
+	public Map<String, String> getProperties() {
+		return properties;
+	}
 
-    @JsonAnySetter
-    public void put(String key, String value) {
-        properties.put(key, value);
-    }
+	@JsonAnySetter
+	public void put(String key, String value) {
+		properties.put(key, value);
+	}
 
-    public boolean containsKey(String key) {
-        return properties.containsKey(key);
-    }
+	public boolean containsKey(String key) {
+		return properties.containsKey(key);
+	}
 
 }

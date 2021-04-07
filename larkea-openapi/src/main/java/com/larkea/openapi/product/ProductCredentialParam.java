@@ -20,10 +20,10 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "ProductCredential参数", description = "产品密钥")
 public class ProductCredentialParam extends BaseModel<ProductCredential> {
 
-    private Long productId;
+	private Long productId;
 
-    private String productKey;
+	private String productKey;
 
-    private String productSecret;
+	private String productSecret;
 
 }

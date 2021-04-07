@@ -5,18 +5,18 @@ import lombok.Data;
 @Data
 public class ThingMqttTopic {
 
-    private String topicNamePattern;
+	private String topicNamePattern;
 
-    private PubsubFlag pubsubFlag;
+	private PubsubFlag pubsubFlag;
 
-    private String description;
+	private String description;
 
-    public ThingMqttTopic() {
-    }
+	public ThingMqttTopic() {
+	}
 
-    public ThingMqttTopic(String topicNamePattern, PubsubFlag pubsubFlag, String description) {
-        this.topicNamePattern = topicNamePattern;
-        this.pubsubFlag = pubsubFlag;
-        this.description = description;
-    }
+	public ThingMqttTopic(String topicNamePattern, PubsubFlag pubsubFlag, String description) {
+		this.topicNamePattern = topicNamePattern;
+		this.pubsubFlag = pubsubFlag;
+		this.description = description;
+	}
 }

@@ -5,17 +5,17 @@ import lombok.Getter;
 
 @Getter
 public enum OperationType implements EnumData {
-    PROPERTY(1, "属性"),
-    COMMAND(2, "命令"),
-    EVENT(3, "事件"),
-    ;
+	PROPERTY(1, "属性"),
+	COMMAND(2, "命令"),
+	EVENT(3, "事件"),
+	;
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    OperationType(Integer value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	OperationType(Integer value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 }

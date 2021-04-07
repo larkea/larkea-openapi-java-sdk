@@ -9,12 +9,12 @@ public enum DataFormat implements EnumData {
 	WEINTEK_JSON(2, "威纶通数据格式"),
 	USER(99999, "自定义/透传");
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    DataFormat(int value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	DataFormat(int value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 }

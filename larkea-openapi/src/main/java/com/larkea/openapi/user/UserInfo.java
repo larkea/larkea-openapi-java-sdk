@@ -21,25 +21,25 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "UserInfo", description = "用户")
 public class UserInfo extends BaseModel<User> {
 
-    @ApiModelProperty(value = "用户主键")
-    private Long id;
+	@ApiModelProperty(value = "用户主键")
+	private Long id;
 
-    @ApiModelProperty(value = "账号")
-    private String username;
+	@ApiModelProperty(value = "账号")
+	private String username;
 
-    @ApiModelProperty(value = "邮箱")
-    private String email;
+	@ApiModelProperty(value = "邮箱")
+	private String email;
 
-    @ApiModelProperty(value = "手机")
-    private String mobile;
+	@ApiModelProperty(value = "手机")
+	private String mobile;
 
-    @ApiModelProperty(value = "租户主键")
-    private Long tenantId;
+	@ApiModelProperty(value = "租户主键")
+	private Long tenantId;
 
-    @ApiModelProperty(value = "头像")
-    private String avatarUrl;
+	@ApiModelProperty(value = "头像")
+	private String avatarUrl;
 
-    @ApiModelProperty(value = "状态")
-    private UserStatus status;
+	@ApiModelProperty(value = "状态")
+	private UserStatus status;
 
 }

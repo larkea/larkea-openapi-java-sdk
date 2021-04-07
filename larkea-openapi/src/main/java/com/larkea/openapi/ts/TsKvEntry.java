@@ -4,6 +4,6 @@ import com.larkea.openapi.kv.KvEntry;
 
 public interface TsKvEntry extends KvEntry {
 
-    Long getTs();
+	Long getTs();
 
 }

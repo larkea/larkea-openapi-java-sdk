@@ -21,19 +21,19 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "TenantInfo", description = "租户")
 public class TenantInfo extends BaseModel<Tenant> {
 
-    @ApiModelProperty(value = "租户主键")
-    private Long id;
+	@ApiModelProperty(value = "租户主键")
+	private Long id;
 
-    @ApiModelProperty(value = "租户标识")
-    private String tenantKey;
+	@ApiModelProperty(value = "租户标识")
+	private String tenantKey;
 
-    @ApiModelProperty(value = "租户名称")
-    private String tenantName;
+	@ApiModelProperty(value = "租户名称")
+	private String tenantName;
 
-    @ApiModelProperty(value = "租户类型")
-    private Integer tenantType;
+	@ApiModelProperty(value = "租户类型")
+	private Integer tenantType;
 
-    @ApiModelProperty(value = "状态")
-    private Integer status;
+	@ApiModelProperty(value = "状态")
+	private Integer status;
 
 }

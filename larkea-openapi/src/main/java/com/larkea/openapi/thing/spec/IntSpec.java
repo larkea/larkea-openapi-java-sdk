@@ -12,13 +12,13 @@ import lombok.ToString;
 @ToString(callSuper = true)
 public class IntSpec extends NumberSpec {
 
-    @ApiModelProperty(value = "步长", required = true)
-    private Long step;
+	@ApiModelProperty(value = "步长", required = true)
+	private Long step;
 
-    @ApiModelProperty(value = "最小值", required = true)
-    private Long min;
+	@ApiModelProperty(value = "最小值", required = true)
+	private Long min;
 
-    @ApiModelProperty(value = "最大值", required = true)
-    private Long max;
+	@ApiModelProperty(value = "最大值", required = true)
+	private Long max;
 
 }

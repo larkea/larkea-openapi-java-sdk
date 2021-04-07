@@ -22,8 +22,8 @@ import org.hibernate.validator.constraints.Length;
 @ApiModel(value = "创建设备参数", description = "设备")
 public class DeviceUpdateParam extends BaseModel<Device> {
 
-    @ApiModelProperty(value = "设备名称")
-    @Length(min = 0, max = 64)
-    private String name;
+	@ApiModelProperty(value = "设备名称")
+	@Length(min = 0, max = 64)
+	private String name;
 
 }
