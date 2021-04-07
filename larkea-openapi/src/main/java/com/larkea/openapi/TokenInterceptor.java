@@ -1,5 +1,8 @@
 package com.larkea.openapi;
 
+import java.time.LocalDateTime;
+
+import com.larkea.openapi.token.OAuthToken;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
@@ -9,7 +12,7 @@ public class TokenInterceptor implements RequestInterceptor {
 
 	private final LarkeaClientProperties properties;
 
-	private String token;
+	private OAuthToken token;
 
 	public TokenInterceptor(LarkeaAuthClient larkeaAuthClient, LarkeaClientProperties properties) {
 		this.larkeaAuthClient = larkeaAuthClient;
@@ -17,7 +20,7 @@ public class TokenInterceptor implements RequestInterceptor {
 
 		if (this.properties.getLazy() != null && !this.properties.getLazy()) {
 			this.token = this.larkeaAuthClient.getOAuthToken(this.properties.getAccessKey(),
-					this.properties.getAccessSecret()).getAccessToken();
+					this.properties.getAccessSecret());
 		}
 	}
 
@@ -27,12 +30,16 @@ public class TokenInterceptor implements RequestInterceptor {
 			renewToken();
 		}
 
-		template.header("Authorization", String.format("Bearer %s", token));
+		if (token.getGmtAccessTokenExpired().isBefore(LocalDateTime.now())) {
+			renewToken();
+		}
+
+		template.header("Authorization", String.format("Bearer %s", token.getAccessToken()));
 	}
 
 	public void renewToken() {
 		this.token = larkeaAuthClient.getOAuthToken(properties.getAccessKey(),
-				properties.getAccessSecret()).getAccessToken();
+				properties.getAccessSecret());
 	}
 
 }

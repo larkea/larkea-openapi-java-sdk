@@ -27,8 +27,5 @@ dependencies {
 	implementation("io.springfox:springfox-swagger2")
 	implementation("io.springfox:springfox-bean-validators")
 	api("com.larkea.boot:larkea-boot-core")
-
-	// Test
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
