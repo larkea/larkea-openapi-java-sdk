@@ -7,10 +7,10 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class LarkeaMessageMetadata {
 
-    private Long tsMessageReceived;
+	private Long tsMessageReceived;
 
-    private Long tsMessageSent;
+	private Long tsMessageSent;
 
-    private Integer messageSizeInBytes;
+	private Integer messageSizeInBytes;
 
 }

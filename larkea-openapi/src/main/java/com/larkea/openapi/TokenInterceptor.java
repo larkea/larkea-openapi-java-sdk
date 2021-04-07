@@ -5,11 +5,11 @@ import feign.RequestTemplate;
 
 public class TokenInterceptor implements RequestInterceptor {
 
-	private String token;
-
 	private final LarkeaAuthClient larkeaAuthClient;
 
 	private final LarkeaClientProperties properties;
+
+	private String token;
 
 	public TokenInterceptor(LarkeaAuthClient larkeaAuthClient, LarkeaClientProperties properties) {
 		this.larkeaAuthClient = larkeaAuthClient;

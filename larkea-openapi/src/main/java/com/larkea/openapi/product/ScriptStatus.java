@@ -5,16 +5,16 @@ import lombok.Getter;
 
 @Getter
 public enum ScriptStatus implements EnumData {
-    DRAFT(1, "草稿"),
-    PUBLISHED(2, "已发布"),
-    ;
+	DRAFT(1, "草稿"),
+	PUBLISHED(2, "已发布"),
+	;
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    ScriptStatus(Integer value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	ScriptStatus(Integer value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 }

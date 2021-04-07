@@ -8,18 +8,18 @@ import lombok.Getter;
  */
 @Getter
 public enum GwNetType implements EnumData {
-    MODBUS(1, "Modbus 协议"),
-    OPC_UA(2, "OPC UA 协议"),
-    BLE(3, "蓝牙低功耗协议"),
-    ZIGBEE(4, "ZigBee协议"),
-    OTHER(99, "其它");
+	MODBUS(1, "Modbus 协议"),
+	OPC_UA(2, "OPC UA 协议"),
+	BLE(3, "蓝牙低功耗协议"),
+	ZIGBEE(4, "ZigBee协议"),
+	OTHER(99, "其它");
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    GwNetType(int value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	GwNetType(int value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 }

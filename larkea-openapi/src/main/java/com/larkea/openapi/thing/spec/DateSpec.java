@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class DateSpec implements Spec {
 
-    @ApiModelProperty(value = "时间格式", required = true)
-    private String pattern;
+	@ApiModelProperty(value = "时间格式", required = true)
+	private String pattern;
 
 }

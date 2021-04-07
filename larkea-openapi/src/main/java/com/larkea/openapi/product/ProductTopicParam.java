@@ -21,22 +21,22 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "ProductTopic参数", description = "产品主题")
 public class ProductTopicParam extends BaseModel<ProductTopic> {
 
-    @ApiModelProperty(value = "租户主键")
-    private Long tenantId;
+	@ApiModelProperty(value = "租户主键")
+	private Long tenantId;
 
-    @ApiModelProperty(value = "产品主键")
-    private Long productId;
+	@ApiModelProperty(value = "产品主键")
+	private Long productId;
 
-    @ApiModelProperty(value = "主题")
-    private String topic;
+	@ApiModelProperty(value = "主题")
+	private String topic;
 
-    @ApiModelProperty(value = "主题类型")
-    private Integer topicType;
+	@ApiModelProperty(value = "主题类型")
+	private Integer topicType;
 
-    @ApiModelProperty(value = "订阅发布标志")
-    private Integer pubsubFlag;
+	@ApiModelProperty(value = "订阅发布标志")
+	private Integer pubsubFlag;
 
-    @ApiModelProperty(value = "描述")
-    private String description;
+	@ApiModelProperty(value = "描述")
+	private String description;
 
 }

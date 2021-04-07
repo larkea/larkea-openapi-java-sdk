@@ -8,16 +8,16 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class LarkeaMessage<T> {
 
-    private LarkeaMessageType type;
+	private LarkeaMessageType type;
 
-    private ThingKey thingKey;
+	private ThingKey thingKey;
 
-    private String topicName;
+	private String topicName;
 
-    private Integer qos;
+	private Integer qos;
 
-    private LarkeaMessageMetadata metadata;
+	private LarkeaMessageMetadata metadata;
 
-    private T payload;
+	private T payload;
 
 }

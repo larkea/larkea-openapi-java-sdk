@@ -19,16 +19,16 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "DeviceCredential", description = "设备密钥")
 public class DeviceCredential implements BaseData {
 
-    @ApiModelProperty(value = "设备密钥主键")
-    private Long id;
+	@ApiModelProperty(value = "设备密钥主键")
+	private Long id;
 
-    @ApiModelProperty(value = "设备主键")
-    private Long deviceId;
+	@ApiModelProperty(value = "设备主键")
+	private Long deviceId;
 
-    @ApiModelProperty(value = "设备标识")
-    private String deviceKey;
+	@ApiModelProperty(value = "设备标识")
+	private String deviceKey;
 
-    @ApiModelProperty(value = "设备密钥")
-    private String deviceSecret;
+	@ApiModelProperty(value = "设备密钥")
+	private String deviceSecret;
 
 }

@@ -9,8 +9,6 @@ import com.larkea.iot.exception.LarkeaIotResultCode;
 import com.larkea.usercenter.exception.UsercenterResultCode;
 
 public class ResultCodeUtil {
-	private ResultCodeUtil() {}
-
 	public static final Map<Integer, ResultCode> RESULT_CODE_MAP = Maps.newHashMap();
 
 	static {
@@ -22,9 +20,12 @@ public class ResultCodeUtil {
 			RESULT_CODE_MAP.put(resultCode.getCode(), resultCode);
 		}
 
-		for (UsercenterResultCode resultCode: UsercenterResultCode.values()) {
+		for (UsercenterResultCode resultCode : UsercenterResultCode.values()) {
 			RESULT_CODE_MAP.put(resultCode.getCode(), resultCode);
 		}
+	}
+
+	private ResultCodeUtil() {
 	}
 
 	public static ResultCode getResultCode(int code) {

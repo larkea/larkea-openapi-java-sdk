@@ -9,12 +9,12 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class ThingModel {
 
-    private String productKey;
+	private String productKey;
 
-    private List<PropertyInfo> properties;
+	private List<PropertyInfo> properties;
 
-    private List<CommandInfo> commands;
+	private List<CommandInfo> commands;
 
-    private List<EventInfo> events;
+	private List<EventInfo> events;
 
 }

@@ -21,25 +21,25 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "ProductTopic", description = "产品主题")
 public class ProductTopic implements BaseData {
 
-    @ApiModelProperty(value = "产品主题主键")
-    private Long id;
+	@ApiModelProperty(value = "产品主题主键")
+	private Long id;
 
-    @ApiModelProperty(value = "租户主键")
-    private Long tenantId;
+	@ApiModelProperty(value = "租户主键")
+	private Long tenantId;
 
-    @ApiModelProperty(value = "产品主键")
-    private Long productId;
+	@ApiModelProperty(value = "产品主键")
+	private Long productId;
 
-    @ApiModelProperty(value = "主题")
-    private String topicName;
+	@ApiModelProperty(value = "主题")
+	private String topicName;
 
-    @ApiModelProperty(value = "主题类型")
-    private TopicType topicType;
+	@ApiModelProperty(value = "主题类型")
+	private TopicType topicType;
 
-    @ApiModelProperty(value = "订阅发布标志")
-    private PubsubFlag pubsubFlag;
+	@ApiModelProperty(value = "订阅发布标志")
+	private PubsubFlag pubsubFlag;
 
-    @ApiModelProperty(value = "描述")
-    private String description;
+	@ApiModelProperty(value = "描述")
+	private String description;
 
 }

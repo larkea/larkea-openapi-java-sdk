@@ -5,16 +5,16 @@ import lombok.Getter;
 
 @Getter
 public enum UserStatus implements EnumData {
-    ENABLED(1, "正常"),
-    DISABLED(2, "停用");
+	ENABLED(1, "正常"),
+	DISABLED(2, "停用");
 
-    Integer value;
+	Integer value;
 
-    String description;
+	String description;
 
-    UserStatus(Integer value, String description) {
-        this.value = value;
-        this.description = description;
-    }
+	UserStatus(Integer value, String description) {
+		this.value = value;
+		this.description = description;
+	}
 
 }

@@ -19,16 +19,16 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "UserCredential", description = "用户密钥")
 public class UserCredential implements BaseData {
 
-    @ApiModelProperty(value = "用户密码主键")
-    private Long id;
+	@ApiModelProperty(value = "用户密码主键")
+	private Long id;
 
-    @ApiModelProperty(value = "用户主键")
-    private Long userId;
+	@ApiModelProperty(value = "用户主键")
+	private Long userId;
 
-    @ApiModelProperty(value = "密码")
-    private String password;
+	@ApiModelProperty(value = "密码")
+	private String password;
 
-    @ApiModelProperty(value = "密码盐")
-    private String salt;
+	@ApiModelProperty(value = "密码盐")
+	private String salt;
 
 }

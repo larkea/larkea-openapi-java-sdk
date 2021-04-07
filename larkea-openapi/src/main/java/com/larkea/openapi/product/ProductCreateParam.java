@@ -22,26 +22,26 @@ import org.hibernate.validator.constraints.Length;
 @ApiModel(value = "创建产品", description = "产品")
 public class ProductCreateParam {
 
-    @ApiModelProperty(value = "产品名称")
-    @NotBlank
-    @Length(min = 4, max = 30)
-    private String name;
+	@ApiModelProperty(value = "产品名称")
+	@NotBlank
+	@Length(min = 4, max = 30)
+	private String name;
 
-    @ApiModelProperty(value = "产品描述")
-    private String description;
+	@ApiModelProperty(value = "产品描述")
+	private String description;
 
-    @ApiModelProperty(value = "节点类型")
-    @NotNull
-    private NodeType nodeType;
+	@ApiModelProperty(value = "节点类型")
+	@NotNull
+	private NodeType nodeType;
 
-    @ApiModelProperty(value = "连网方式")
-    private NetType netType;
+	@ApiModelProperty(value = "连网方式")
+	private NetType netType;
 
-    @ApiModelProperty(value = "子设备连接网关方式")
-    private GwNetType gwNetType;
+	@ApiModelProperty(value = "子设备连接网关方式")
+	private GwNetType gwNetType;
 
-    @ApiModelProperty(value = "数据格式")
-    @NotNull
-    private DataFormat dataFormat;
+	@ApiModelProperty(value = "数据格式")
+	@NotNull
+	private DataFormat dataFormat;
 
 }

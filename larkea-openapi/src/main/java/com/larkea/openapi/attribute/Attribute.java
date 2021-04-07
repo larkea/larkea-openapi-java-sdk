@@ -19,19 +19,19 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "Attribute", description = "特性")
 public class Attribute implements BaseData {
 
-    @ApiModelProperty(value = "特性主键")
-    private Long id;
+	@ApiModelProperty(value = "特性主键")
+	private Long id;
 
-    @ApiModelProperty(value = "实体主键")
-    private Long entityId;
+	@ApiModelProperty(value = "实体主键")
+	private Long entityId;
 
-    @ApiModelProperty(value = "实体类型")
-    private AttributeEntityType entityType;
+	@ApiModelProperty(value = "实体类型")
+	private AttributeEntityType entityType;
 
-    @ApiModelProperty(value = "特性标识")
-    private String attrKey;
+	@ApiModelProperty(value = "特性标识")
+	private String attrKey;
 
-    @ApiModelProperty(value = "特性值")
-    private String attrValue;
+	@ApiModelProperty(value = "特性值")
+	private String attrValue;
 
 }

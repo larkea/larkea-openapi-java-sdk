@@ -18,12 +18,12 @@ import lombok.experimental.Accessors;
 @ApiModel(value = "ProductCredential", description = "产品密钥")
 public class ProductCredential implements BaseData {
 
-    private Long id;
+	private Long id;
 
-    private Long productId;
+	private Long productId;
 
-    private String productKey;
+	private String productKey;
 
-    private String productSecret;
+	private String productSecret;
 
 }

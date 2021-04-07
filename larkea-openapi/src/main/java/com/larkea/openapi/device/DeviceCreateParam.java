@@ -24,16 +24,16 @@ import org.hibernate.validator.constraints.Length;
 @ApiModel(value = "创建设备参数", description = "设备")
 public class DeviceCreateParam extends BaseModel<Device> {
 
-    @ApiModelProperty(value = "产品主键")
-    @NotNull
-    private String productKey;
+	@ApiModelProperty(value = "产品主键")
+	@NotNull
+	private String productKey;
 
-    @ApiModelProperty(value = "设备标识")
-    @Length(min = 0, max = 64)
-    private String deviceKey;
+	@ApiModelProperty(value = "设备标识")
+	@Length(min = 0, max = 64)
+	private String deviceKey;
 
-    @ApiModelProperty(value = "设备名称")
-    @Length(min = 0, max = 64)
-    private String name;
+	@ApiModelProperty(value = "设备名称")
+	@Length(min = 0, max = 64)
+	private String name;
 
 }

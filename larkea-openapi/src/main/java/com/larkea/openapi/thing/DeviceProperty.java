@@ -11,16 +11,16 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class DeviceProperty {
 
-    private Long tsLatestUpdated;
+	private Long tsLatestUpdated;
 
-    private Map<String, TsData> properties = Maps.newConcurrentMap();
+	private Map<String, TsData> properties = Maps.newConcurrentMap();
 
-    public DeviceProperty put(String identifier, Object value, Long ts) {
-        properties.computeIfAbsent(identifier, key -> new TsData().setKey(key))
-                .setValue(value)
-                .setTs(ts);
-        tsLatestUpdated = System.currentTimeMillis();
-        return this;
-    }
+	public DeviceProperty put(String identifier, Object value, Long ts) {
+		properties.computeIfAbsent(identifier, key -> new TsData().setKey(key))
+				.setValue(value)
+				.setTs(ts);
+		tsLatestUpdated = System.currentTimeMillis();
+		return this;
+	}
 
 }
