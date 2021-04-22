@@ -87,4 +87,10 @@ public interface LarkeaClient {
 			@Param("messagePayload") String messagePayload,
 			@Param("qos") Integer qos);
 
+	@RequestLine("GET /timeseries/properties/{propertyId}/all?deviceId={deviceId}&tsBegin={tsBegin}&tsEnd={tsEnd}")
+	List<TsPropertyKvEntry> listAllTsPropertyData(@Param("propertyId") Long propertyId,
+			@Param("deviceId") Long deviceId,
+			@Param("tsBegin") Long tsBegin,
+			@Param("tsEnd") Long tsEnd);
+
 }
